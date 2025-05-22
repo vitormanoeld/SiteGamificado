@@ -1,0 +1,386 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ @font-face {
+      font-family: 'Valorant';
+      src: url('fontes/fontvava.ttf') format('truetype');
+    }
+
+    h1 {
+      font-family: 'Valorant', sans-serif;
+      color: #ff4655;
+      font-size: 5rem;
+      letter-spacing: 0.5em;
+      text-transform: uppercase;
+
+    }
+.namevava{
+      position: relative;
+      z-index: 1;
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+    }
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    opacity: 1.5;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 3;
+    pointer-events: none;
+}
+
+/* Logo */
+
+.imglogo {
+    max-width: 70px;
+    margin-left: 3%;
+    margin-top: 2rem;
+    position: relative;
+}
+
+
+/* NavBar Links */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 1.5vh;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    font-family: 'Valorant', sans-serif;
+}
+
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: red;
+    transition: width 0.5s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgb(255, 255, 255);
+    
+}
+
+
+.navbar-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 8vh;
+    margin-top: -48px;
+    padding: 0;
+    position: absolute;
+    margin-left: 0px;
+}
+
+ .minimal-btn {
+    position: relative;
+    padding: 16px 40px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    
+}
+
+        /* Botão com fundo vermelho */
+        .btn-filled {
+            background: #1a1a1a;
+            border: 2px solid #444;
+            color: #ffffff;
+        }
+
+        .btn-filled::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #ff4655, transparent);
+            transition: left 0.6s ease;
+            z-index: 1;
+        }
+
+        .btn-filled::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ff4655;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-filled:hover {
+            border-color: #ff4655;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .btn-filled:hover::before {
+            left: 100%;
+        }
+
+        .btn-filled:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Botão outline */
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #333;
+            color: #cccccc;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff4655, #cc3344, #ff4655, #cc3344);
+            background-size: 400% 400%;
+            
+            z-index: -1;
+            opacity: 0;
+            animation: gradientShift 3s ease infinite;
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-outline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffb6b600;
+            
+            z-index: -1;
+        }
+
+        .btn-outline:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Efeito de scan line */
+        .scan-effect {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent
+            );
+            transition: left 0.5s ease;
+            z-index: 2;
+        }
+
+        .minimal-btn:hover .scan-effect {
+            left: 100%;
+        }
+
+        /* Estados de click */
+        .minimal-btn:active {
+            transform: translateY(0px) scale(0.98);
+        }
+
+        /* Texto com efeito */
+        .btn-text {
+            position: relative;
+            z-index: 3;
+            transition: all 0.3s ease;
+            font-family: 'Valorant', sans-serif;
+        }
+
+        .btn-filled:hover .btn-text {
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-outline:hover .btn-text {
+            text-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
+        }
+
+        /* Pontos nos cantos */
+        .corner-dots {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ff4655;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .corner-dots:nth-child(1) { top: 8px; left: 8px; }
+        .corner-dots:nth-child(2) { top: 8px; right: 8px; }
+        .corner-dots:nth-child(3) { bottom: 8px; left: 8px; }
+        .corner-dots:nth-child(4) { bottom: 8px; right: 8px; }
+
+        .minimal-btn:hover .corner-dots {
+            opacity: 1;
+        }
+        .minimal-btn:hover {
+            animation: pulse 2s infinite;
+        }
+        .buttons{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 90px;
+            margin-top: 300px;
+            position: absolute;
+            margin-left: -62px;
+        }
+  
+        .valorant-play-btn {
+            position: relative;
+            background: linear-gradient(135deg, #ff4655 0%, #cc3944 100%);
+            color: white;
+            border: none;
+            padding: 6px 45px;
+            font-family: 'Tungsten', 'Arial Narrow', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(255, 70, 85, 0.3);
+            border-radius: 20px;
+            z-index: 1;
+            margin-top: -62px;
+            margin-left: 85%;
+            font-family: 'Valorant', sans-serif;
+            
+        }
+        
+        
+        .valorant-play-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                          transparent, 
+                          rgba(255, 255, 255, 0.2), 
+                          transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+    
+        .valorant-play-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(255, 70, 85, 0.5);
+        }
+        
+        .valorant-play-btn:hover::before {
+            left: 100%;
+        }
+        
+   
+        .valorant-play-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(255, 70, 85, 0.4);
+        }
+        
+
+     
+        
+        .valorant-play-btn:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        /* EFEITO DE PULSO (OPCIONAL) */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 70, 85, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 70, 85, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 70, 85, 0); }
+        }
+        
+        .valorant-play-btn.pulse {
+            animation: pulse 1.5s infinite;
+        }   
