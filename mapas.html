@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALORANT Maps Experience</title>
+    <link rel="stylesheet" href="stylemapa.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+                "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.2/index.js"
+            }
+        }
+    </script>
+</head>
+<body>
+    
+
+    <div class="site-container">
+        
+
+        <main>
+            <div class="map-background"></div>
+            <div class="map-content">
+                <div class="map-title-container">
+                    <h1 class="map-title">ASCENT</h1>
+                    <p class="map-subtitle">ITALY</p>
+                </div>
+                <div class="map-description">
+                    <p>An open playground for small wars of position and attrition divided by a middle that both teams can skirmish over.</p>
+                </div>
+                <div class="map-callouts">
+                    <div class="callout-button">VIEW CALLOUTS</div>
+                </div>
+                <div class="map-layout-container">
+                    <div class="map-layout"></div>
+                </div>
+            </div>
+
+            <div class="maps-selector">
+                <div class="map-card active" data-map="ascent">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">ASCENT</div>
+                </div>
+                <div class="map-card" data-map="bind">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">BIND</div>
+                </div>
+                <div class="map-card" data-map="haven">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">HAVEN</div>
+                </div>
+                <div class="map-card" data-map="split">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">SPLIT</div>
+                </div>
+                <div class="map-card" data-map="icebox">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">ICEBOX</div>
+                </div>
+                <div class="map-card" data-map="breeze">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">BREEZE</div>
+                </div>
+                <div class="map-card" data-map="fracture">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">FRACTURE</div>
+                </div>
+                <div class="map-card" data-map="pearl">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">PEARL</div>
+                </div>
+                <div class="map-card" data-map="lotus">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">LOTUS</div>
+                </div>
+                <div class="map-card" data-map="sunset">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">SUNSET</div>
+                </div>
+            </div>
+
+            <div class="explore-button">EXPLORE IN 3D</div>
+        </main>
+
+        <div class="three-container">
+            <div class="back-button">
+                <span class="arrow">←</span> BACK TO MAPS
+            </div>
+            <div class="controls-guide">
+                <div class="control-item">
+                    <div class="key">W</div>
+                    <div class="key">A</div>
+                    <div class="key">S</div>
+                    <div class="key">D</div>
+                    <span>MOVE</span>
+                </div>
+                <div class="control-item">
+                    <div class="key">MOUSE</div>
+                    <span>LOOK</span>
+                </div>
+                <div class="control-item">
+                    <div class="key">SHIFT</div>
+                    <span>RUN</span>
+                </div>
+                <div class="control-item">
+                    <div class="key">SPACE</div>
+                    <span>JUMP</span>
+                </div>
+            </div>
+            <div class="teleport-points"></div>
+        </div>
+    </div>
+
+    <div class="callouts-overlay">
+        <div class="callouts-container">
+            <div class="close-callouts">×</div>
+            <div class="callouts-title">MAP CALLOUTS</div>
+            <div class="callouts-image"></div>
+        </div>
+    </div>
+
+    <audio id="hover-sound" preload="auto"></audio>
+    <audio id="select-sound" preload="auto"></audio>
+    <audio id="ambient-sound" loop preload="auto"></audio>
+    <audio id="explore-sound" preload="auto"></audio>
+
+    <script type="module" src="scriptmapa.js"></script>
+</body>
+</html>
