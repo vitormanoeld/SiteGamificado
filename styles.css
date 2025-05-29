@@ -1,6 +1,4 @@
-/* 
-Style Página inical de escolha
- */
+
 
 * {
     margin: 0;
@@ -10,7 +8,6 @@ Style Página inical de escolha
 }
 
 body {
-    background-color: black;
     min-height: 100vh;
     overflow: hidden;
     display: flex;
