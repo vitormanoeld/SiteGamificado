@@ -123,6 +123,10 @@ function inicializar() {
     trocarMapa('ascent');
 }
 
+function montarComp(){
+    
+}
+
 
 
 inicializar();
