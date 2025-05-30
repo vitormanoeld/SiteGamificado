@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="pt-br">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Valorant</title>
+    <title>Página Inicial</title>
     <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <section>
-        <div class="background-container">
-            <video autoplay muted id="valorantVideo" class="video-bg" loop muted>
+      <div class="background-container">
+        <video autoplay muted id="valorantVideo" class="video-bg" loop muted>
           <source src="/assets/GERAL/valorant.mp4" type="video/mp4" />
         </video>
-        </div>
+      </div>
 
-        <div class="divlogo">
-            <a class="logo" href="inicial.html">
-                <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
-            </a>
-        </div>
+      <div class="divlogo">
+        <a class="logo" href="inicial.html">
+          <img
+            class="imglogo"
+            src="/assets/GERAL/valorant.png"
+            alt="Logo Valorant"
+          />
+        </a>
+      </div>
 
-        <header class="header">
-            <nav class="navbar">
-                <div class="navbar-div">
-                    <a class="active" href="index.html">Ínicio</a>
-                    <a href="solucoes.html">Agentes</a>
-                    <a href="/public/html/index.html">Mapas</a>
-                    <a href="developers.html">Armas</a>
-                    <a href="contatoo.html">Torneios</a>
-                </div>
-                <button onclick="redirecionar()" class="valorant-play-btn pulse">
+      <header class="header">
+        <nav class="navbar">
+          <div class="navbar-div">
+            <a class="active" href="index.html">Ínicio</a>
+            <a href="solucoes.html">Agentes</a>
+            <a href="/public/html/index.html">Mapas</a>
+            <a href="developers.html">Armas</a>
+            <a href="contatoo.html">Torneios</a>
+          </div>
+          <button onclick="redirecionar()" class="valorant-play-btn pulse">
             Jogar
           </button>
-            </nav>
-        </header>
+        </nav>
+      </header>
 
-        <div class="namevava">
-            <h1>Valorant</h1>
-            <div class="buttons">
-                <button class="minimal-btn btn-filled">
+      <div class="namevava">
+        <h1>Valorant</h1>
+        <div class="buttons">
+          <button class="minimal-btn btn-filled">
             <div class="scan-effect"></div>
             <div class="corner-dots"></div>
             <div class="corner-dots"></div>
@@ -50,7 +56,7 @@
             <span class="btn-text">COMEÇAR</span>
           </button>
 
-                <button class="minimal-btn btn-outline">
+          <button class="minimal-btn btn-outline">
             <div class="scan-effect"></div>
             <div class="corner-dots"></div>
             <div class="corner-dots"></div>
@@ -58,9 +64,8 @@
             <div class="corner-dots"></div>
             <span class="btn-text">TORNEIOS</span>
           </button>
-            </div>
         </div>
+      </div>
     </section>
-</body>
-
+  </body>
 </html>
