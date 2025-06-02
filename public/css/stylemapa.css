@@ -52,7 +52,7 @@ main {
     align-items: center;
     z-index: 1;
     margin-top: -95px;
-    height: 100vh;
+    height:99vh;
 }
 
 
@@ -64,7 +64,7 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url('assets/fundosVava.jpg');
+    background: url(/assets/ascent/ascentfundo.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

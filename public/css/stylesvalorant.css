@@ -53,7 +53,7 @@ h1 {
 .imglogo {
     max-width: 70px;
     margin-left: 3%;
-    margin-top: 2rem;
+    margin-top: 1rem;
     position: relative;
 }
 
@@ -145,7 +145,7 @@ h1 {
     box-shadow: 0 8px 20px rgba(255, 70, 85, 0.3);
     border-radius: 20px;
     z-index: 1;
-    margin-top: -62px;
+    margin-top: -55px;
     margin-left: 85%;
 }
 

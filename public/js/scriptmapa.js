@@ -121,11 +121,12 @@ function configurarCartoesMapa() {
 function inicializar() {
     configurarCartoesMapa();
     trocarMapa('ascent');
+
+   
+    const cartaoInicial = document.querySelector('.map-card[data-map="ascent"]');
+    if (cartaoInicial) definirCartaoAtivo(cartaoInicial);
 }
 
-function montarComp(){
-    
-}
 
 
 
