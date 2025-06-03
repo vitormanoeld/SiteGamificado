@@ -1,3 +1,6 @@
+/* =========================
+   RESET E BASE
+   ========================= */
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +21,9 @@ body {
     overflow: hidden;
 }
 
+/* =========================
+   BACKGROUND E EFEITOS
+   ========================= */
 .background-effect {
     position: absolute;
     top: 0;
@@ -28,7 +34,6 @@ body {
     opacity: 0.2;
     z-index: -1;
 }
-
 
 .background-effect::before {
     content: '';
@@ -42,7 +47,9 @@ body {
     mix-blend-mode: overlay;
 }
 
-
+/* =========================
+   MAIN E SEÇÕES PRINCIPAIS
+   ========================= */
 main {
     padding: 30px 50px 80px;
 }
@@ -65,7 +72,6 @@ main {
     0% {
         filter: drop-shadow(0 0 5px rgba(157, 78, 221, 0.3));
     }
-
     100% {
         filter: drop-shadow(0 0 20px rgba(157, 78, 221, 0.7));
     }
@@ -93,48 +99,14 @@ main {
     font-weight: 600;
 }
 
-/* Tab Navigation */
+/* =========================
+   TAB NAVEGAÇÃO
+   ========================= */
 .tab-navigation {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
     position: relative;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: transparent;
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-th,
-td {
-    padding: 12px 16px;
-    text-align: center;
-    border-bottom: 1px solid #333;
-}
-
-th {
-
-    color:#9d4edd;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-
-@media (max-width: 600px) {
-
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-        font-size: 14px;
-    }
 }
 
 .tab-navigation::after {
@@ -146,11 +118,11 @@ th {
     width: 60%;
     height: 1px;
     background: linear-gradient(90deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(157, 78, 221, 0.8) 20%,
-            rgba(157, 78, 221, 1) 50%,
-            rgba(157, 78, 221, 0.8) 80%,
-            rgba(255, 255, 255, 0) 100%);
+        rgba(255, 255, 255, 0) 0%,
+        rgba(157, 78, 221, 0.8) 20%,
+        rgba(157, 78, 221, 1) 50%,
+        rgba(157, 78, 221, 0.8) 80%,
+        rgba(255, 255, 255, 0) 100%);
 }
 
 .tab {
@@ -188,7 +160,34 @@ th {
     width: 100%;
 }
 
-/* Content Sections */
+/* =========================
+   TABELAS
+   ========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+th {
+    color: #9d4edd;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* =========================
+   SEÇÕES DE CONTEÚDO
+   ========================= */
 .content-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -208,14 +207,15 @@ th {
         opacity: 0;
         transform: translateY(10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Overview Tab Content */
+/* =========================
+   OVERVIEW TAB
+   ========================= */
 .overview-content {
     max-width: 900px;
     margin: 0 auto;
@@ -249,9 +249,9 @@ th {
     width: 80%;
     height: 3px;
     background: linear-gradient(90deg,
-            rgba(157, 78, 221, 0) 0%,
-            rgba(157, 78, 221, 1) 50%,
-            rgba(157, 78, 221, 0) 100%);
+        rgba(157, 78, 221, 0) 0%,
+        rgba(157, 78, 221, 1) 50%,
+        rgba(157, 78, 221, 0) 100%);
 }
 
 .overview-content p {
@@ -328,7 +328,9 @@ th {
     font-size: 1rem;
 }
 
-/* Teams Tab Content */
+/* =========================
+   TEAMS TAB
+   ========================= */
 .teams-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -343,6 +345,14 @@ th {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.team-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .team-card:hover {
@@ -365,9 +375,14 @@ th {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.team-card .team-logo {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
 .team-card:hover .team-logo {
     border-color: rgba(157, 78, 221, 1);
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.7);
+    transform: scale(1.05);
 }
 
 .team-name {
@@ -381,7 +396,9 @@ th {
     color: #8f9faa;
 }
 
-/* Matches Tab Content */
+/* =========================
+   MATCHES TAB
+   ========================= */
 .matches-list {
     padding: 20px 0;
 }
@@ -409,8 +426,8 @@ th {
 }
 
 .match-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(157, 78, 221, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
 }
 
 .match-time {
@@ -457,29 +474,6 @@ th {
     background: center;
 }
 
-/* Efeitos de hover que podem ser convertidos para CSS */
-
-/* Hover effect para prize-pool */
-.prize-pool {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.prize-pool:hover {
-    box-shadow: 0 10px 25px rgba(157, 78, 221, 0.4);
-}
-
-/* Hover effect para team-cards e seus logos */
-.team-card .team-logo {
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.team-card:hover .team-logo {
-    box-shadow: 0 0 20px rgba(157, 78, 221, 0.7);
-    transform: scale(1.05);
-}
-
-/* Hover effect para match-cards e team-logos-small */
 .match-card .team-logo-small {
     border: 2px solid rgba(157, 78, 221, 0.5);
     border-radius: px;
@@ -495,32 +489,18 @@ th {
     filter: brightness(1.1);
 }
 
-/* Animação de entrada para team-cards (parcial) */
-.team-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+/* =========================
+   HOVERS E EFEITOS
+   ========================= */
+.prize-pool {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-/* Quando os cards estão visíveis */
-.team-card.visible {
-    opacity: 1;
-    transform: translateY(0);
+.prize-pool:hover {
+    box-shadow: 0 10px 25px rgba(157, 78, 221, 0.4);
 }
 
-/* Hover effects adicionais para melhorar a experiência */
-
-/* Hover para os cards de partida */
-.match-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.match-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(157, 78, 221, 0.2);
-}
-
-/* Hover para tabs */
 .tab {
     transition: color 0.3s ease, border-color 0.3s ease;
 }
@@ -530,7 +510,6 @@ th {
     border-bottom-color: rgba(157, 78, 221, 0.3);
 }
 
-/* Hover para botão de jogar */
 .valorant-play-btn {
     transition: all 0.3s ease;
 }
@@ -539,7 +518,6 @@ th {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
 }
-
 
 .vs {
     font-size: 1rem;
@@ -566,7 +544,9 @@ th {
     left: 100%;
 }
 
-/* Footer Styles */
+/* =========================
+   FOOTER
+   ========================= */
 footer {
     background-color: rgba(15, 25, 35, 0.9);
     padding: 30px 50px;
@@ -607,15 +587,15 @@ footer {
 
 .img-trophy img {
     max-width: 300px;
-
 }
 
 .img-trophy h1 {
     font-size: 15px;
 }
 
-
-/* Responsive Styles */
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
 @media (max-width: 768px) {
     header {
         padding: 15px 20px;
@@ -652,5 +632,16 @@ footer {
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        font-size: 14px;
     }
 }
