@@ -1,282 +1,272 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masters Toronto - Valorant</title>
-  <link rel="stylesheet" href="/public/css/stylestorneio.css" />
-  <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masters Toronto - Valorant</title>
+    <link rel="stylesheet" href="/public/css/stylestorneio.css" />
+    <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;900&display=swap" rel="stylesheet" />
 </head>
 
 <body>
-  <div style="position: fixed;" class="background-container">
-    <video autoplay muted id="valorantVideo" class="video-bg" loop muted>
+    <div style="position: fixed;" class="background-container">
+        <video autoplay muted id="valorantVideo" class="video-bg" loop muted>
       <source src="/assets/GERAL/valorant.mp4" type="video/mp4" />
     </video>
-  </div>
-  <div class="container">
-    <div class="divlogo">
-      <a class="logo" href="inicial.html">
-        <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
-      </a>
     </div>
-
-    <header class="header">
-      <nav class="navbar">
-        <div class="navbar-div">
-          <a class="active" href="/public/html/pagevalorant.html">Ínicio</a>
-          <a href="solucoes.html">Agentes</a>
-          <a href="/public/html/index.html">Mapas</a>
-          <a href="developers.html">Armas</a>
-          <a href="/public/html/torneio.html">Torneios</a>
-        </div>
-        <button onclick="redirecionar()" class="valorant-play-btn pulse">
-          Jogar
-        </button>
-      </nav>
-    </header>
-
-    <main>
-      <div class="masters-logo-container">
-        <img src="/assets/torneio/torontologo.png" alt="Masters Toronto Logo" class="masters-logo" />
-      </div>
-
-      <div class="event-date">
-        <h2>JUNHO 7 - JUNHO 22, 2025</h2>
-        <div class="location">TORONTO, CANADA</div>
-      </div>
-
-      <div class="tab-navigation">
-        <div class="tab active" data-tab="overview">PREMIAÇÃO</div>
-        <div class="tab" data-tab="teams">TIMES</div>
-        <div class="tab" data-tab="matches">PARTIDAS</div>
-      </div>
-
-      <div class="content-section">
-        <div class="tab-content active" id="overview">
-          <div class="overview-content">
-            <div class="img-trophy">
-              <h3 style="font-size: 29px;">APENAS UMA EQUIPE ALCANÇARÁ A GLÓRIA ETERNA</h3>
-              <img src="/assets/torneio/trophy.webp" alt="">
-            </div>
-            <h3 style="font-size: 29px;">PREMIAÇÃO</h3>
-            <div class="premiacao-toronto">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Colocação</th>
-                    <th>Prêmio (USD)</th>
-                    <th>Pontos VCT</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>🥇 1º LUGAR</td>
-                    <td>$350.000</td>
-                    <td>7</td>
-                  </tr>
-                  <tr>
-                    <td>🥈 2º LUGAR</td>
-                    <td>$200.000</td>
-                    <td>5</td>
-                  </tr>
-                  <tr>
-                    <td>🥉 3º LUGAR</td>
-                    <td>$125.000</td>
-                    <td>4</td>
-                  </tr>
-                  <tr>
-                    <td>4º LUGAR</td>
-                    <td>$75.000</td>
-                    <td>3</td>
-                  </tr>
-                  <tr>
-                    <td>5º–6º lugares</td>
-                    <td>$50.000</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <td>7º–8º lugares</td>
-                    <td>$35.000</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>9º–10º lugares</td>
-                    <td>$25.000</td>
-                    <td>0</td>
-                  </tr>
-                  <tr>
-                    <td>11º–12º lugares</td>
-                    <td>$15.000</td>
-                    <td>0</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+    <div class="container">
+        <div class="divlogo">
+            <a class="logo" href="inicial.html">
+                <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
+            </a>
         </div>
 
-        <div class="tab-content" id="teams">
-          <div class="teams-grid">
-            <div class="team-card">
-              <div class="team-logo">
-                <img style="max-width: 100px;" src="/assets/times/Sentinels_logo.png" alt="" />
-              </div>
-              <div class="team-name">SENTINELS</div>
-              <div class="team-region">AMERICAS</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo">
-                <img style="max-width: 70px;" src="/assets/times/FNATIC_logo.png" alt="" />
-              </div>
-              <div class="team-name">FNATIC</div>
-              <div class="team-region">EMEA</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo">
-                <img style="max-width: 70px;" src="/assets/times/PAPERREX_logo.png" alt="" />
-              </div>
-              <div class="team-name">PAPER REX</div>
-              <div class="team-region">PACIFIC</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo">
-                <img style="max-width: 80px;" src="/assets/times/MIBR_logo.png" alt="">
-              </div>
-              <div class="team-name">MIBR</div>
-              <div class="team-region">AMERICAS</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/Teamliquid_logo.png" alt=""></div>
-              <div class="team-name">TEAM LIQUID</div>
-              <div class="team-region">EMEA</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;margin-top: 10px;" src="/assets/times/Gen.G_logo.png"
-                  alt="" /></div>
-              <div class="team-name">GENG</div>
-              <div class="team-region">PACIFIC</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/RRQ_logo.png" alt="" /></div>
-              <div class="team-name">RRQ</div>
-              <div class="team-region">PACIFIC</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/G2_Esports_logo.png" alt="" />
-              </div>
-              <div class="team-name">G2</div>
-              <div class="team-region">AMERICAS</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 80px;" src="/assets/times/Bilibili-Gaming-logo.png"
-                  alt="" /></div>
-              <div class="team-name">BILI BILI GAMING</div>
-              <div class="team-region">CHINA</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 80px;" src="/assets/times/xilai_logo.webp" alt="" /></div>
-              <div class="team-name">XILAI GAMING</div>
-              <div class="team-region">CHINA</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/Wolves_logo.png" alt="" /></div>
-              <div class="team-name">WOLVES ESPORTS</div>
-              <div class="team-region">CHINA</div>
-            </div>
-            <div class="team-card">
-              <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/HERETICS_logo.webp" alt="" />
-              </div>
-              <div class="team-name">HERETICS</div>
-              <div class="team-region">EUROPA</div>
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar-div">
+                    <a class="active" href="pagevalorant.html">Ínicio</a>
+                    <a href="solucoes.html">Agentes</a>
+                    <a href="/public/html/index.html">Mapas</a>
+                    <a href="/public/html/armas.html">Armas</a>
+                    <a href="/public/html/torneio.html">Torneios</a>
+                </div>
+                <button onclick="redirecionar()" class="valorant-play-btn pulse">
+            Jogar
+          </button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="masters-logo-container">
+                <img src="/assets/torneio/torontologo.png" alt="Masters Toronto Logo" class="masters-logo" />
             </div>
 
-          </div>
-        </div>
-
-        <div class="tab-content" id="matches">
-          <div class="matches-list">
-            <div class="match-day">
-              <div class="day-header">DIA 1 - JUNHO 7</div>
-              <div class="match-card">
-                <div class="match-time">13h00 (BRT) </div>
-                <div class="match-teams">
-                  <div class="team team-a">
-                    <span>PAPER REX</span>
-                    <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;"
-                        src="/assets/times/PAPERREX_logo.png" alt=""></div>
-                  </div>
-                  <div class="vs">VS</div>
-                  <div class="team team-b">
-                    <div class="team-logo-small"><img style="max-width: 40px; margin:-2px;"
-                        src="/assets/times/HERETICS_logo.webp" alt=""></div>
-                    <span>HERETICS</span>
-                  </div>
-                </div>
-              </div>
-              <div class="match-card">
-                <div class="match-time">16h00 (BRT)</div>
-                <div class="match-teams">
-                  <div class="team team-a">
-                    <span>BILIBILI</span>
-                    <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;"
-                        src="/assets/times/Bilibili-Gaming-logo.png" alt=""></div>
-                  </div>
-                  <div class="vs">VS</div>
-                  <div class="team team-b">
-                    <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;"
-                        src="/assets/times/Teamliquid_logo.png" alt=""></div>
-                    <span>TEAM LIQUID</span>
-                  </div>
-                </div>
-              </div>
+            <div class="event-date">
+                <h2>JUNHO 7 - JUNHO 22, 2025</h2>
+                <div class="location">TORONTO, CANADA</div>
             </div>
 
-            <div class="match-day">
-              <div class="day-header">DIA 2 - JUNHO 8</div>
-              <div class="match-card">
-                <div class="match-time">13h00 (BRT)</div>
-                <div class="match-teams">
-                  <div class="team team-a">
-                    <span>SENTINELS</span>
-                    <div style="text-align: center;" class="team-logo-small"><img
-                        style="max-width: 35px;margin: 8px auto;" src="/assets/times/Sentinels_logo.png" alt=""></div>
-                  </div>
-                  <div class="vs">VS</div>
-                  <div class="team team-b">
-                    <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 4px;"
-                        src="/assets/times/Wolves_logo.png" alt=""></div>
-                    <span>WOLVES ESPORTS</span>
-                  </div>
+            <div class="tab-navigation">
+                <div class="tab active" data-tab="overview">PREMIAÇÃO</div>
+                <div class="tab" data-tab="teams">TIMES</div>
+                <div class="tab" data-tab="matches">PARTIDAS</div>
+            </div>
+
+            <div class="content-section">
+                <div class="tab-content active" id="overview">
+                    <div class="overview-content">
+                        <div class="img-trophy">
+                            <h3 style="font-size: 29px;">APENAS UMA EQUIPE ALCANÇARÁ A GLÓRIA ETERNA</h3>
+                            <img src="/assets/torneio/trophy.webp" alt="">
+                        </div>
+                        <h3 style="font-size: 29px;">PREMIAÇÃO</h3>
+                        <div class="premiacao-toronto">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Colocação</th>
+                                        <th>Prêmio (USD)</th>
+                                        <th>Pontos VCT</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>🥇 1º LUGAR</td>
+                                        <td>$350.000</td>
+                                        <td>7</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🥈 2º LUGAR</td>
+                                        <td>$200.000</td>
+                                        <td>5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>🥉 3º LUGAR</td>
+                                        <td>$125.000</td>
+                                        <td>4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4º LUGAR</td>
+                                        <td>$75.000</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5º–6º lugares</td>
+                                        <td>$50.000</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7º–8º lugares</td>
+                                        <td>$35.000</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9º–10º lugares</td>
+                                        <td>$25.000</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11º–12º lugares</td>
+                                        <td>$15.000</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="match-card">
-                <div class="match-time">16h00 (BRT)</div>
-                <div class="match-teams">
-                  <div class="team team-a">
-                    <span>MIBR</span>
-                    <div style="text-align: center;" class="team-logo-small"><img style="max-width: 35px;margin: 1px;"
-                        src="/assets/times/MIBR_logo.png" alt=""></div>
-                  </div>
-                  <div class="vs">VS</div>
-                  <div class="team team-b">
-                    <div style="text-align: center;" class="team-logo-small"><img
-                        style="max-width: 23px;margin: 
+
+                <div class="tab-content" id="teams">
+                    <div class="teams-grid">
+                        <div class="team-card">
+                            <div class="team-logo">
+                                <img style="max-width: 100px;" src="/assets/times/Sentinels_logo.png" alt="" />
+                            </div>
+                            <div class="team-name">SENTINELS</div>
+                            <div class="team-region">AMERICAS</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo">
+                                <img style="max-width: 70px;" src="/assets/times/FNATIC_logo.png" alt="" />
+                            </div>
+                            <div class="team-name">FNATIC</div>
+                            <div class="team-region">EMEA</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo">
+                                <img style="max-width: 70px;" src="/assets/times/PAPERREX_logo.png" alt="" />
+                            </div>
+                            <div class="team-name">PAPER REX</div>
+                            <div class="team-region">PACIFIC</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo">
+                                <img style="max-width: 80px;" src="/assets/times/MIBR_logo.png" alt="">
+                            </div>
+                            <div class="team-name">MIBR</div>
+                            <div class="team-region">AMERICAS</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/Teamliquid_logo.png" alt=""></div>
+                            <div class="team-name">TEAM LIQUID</div>
+                            <div class="team-region">EMEA</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;margin-top: 10px;" src="/assets/times/Gen.G_logo.png" alt="" /></div>
+                            <div class="team-name">GENG</div>
+                            <div class="team-region">PACIFIC</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/RRQ_logo.png" alt="" /></div>
+                            <div class="team-name">RRQ</div>
+                            <div class="team-region">PACIFIC</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/G2_Esports_logo.png" alt="" />
+                            </div>
+                            <div class="team-name">G2</div>
+                            <div class="team-region">AMERICAS</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 80px;" src="/assets/times/Bilibili-Gaming-logo.png" alt="" /></div>
+                            <div class="team-name">BILI BILI GAMING</div>
+                            <div class="team-region">CHINA</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 80px;" src="/assets/times/xilai_logo.webp" alt="" /></div>
+                            <div class="team-name">XILAI GAMING</div>
+                            <div class="team-region">CHINA</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/Wolves_logo.png" alt="" /></div>
+                            <div class="team-name">WOLVES ESPORTS</div>
+                            <div class="team-region">CHINA</div>
+                        </div>
+                        <div class="team-card">
+                            <div class="team-logo"><img style="max-width: 70px;" src="/assets/times/HERETICS_logo.webp" alt="" />
+                            </div>
+                            <div class="team-name">HERETICS</div>
+                            <div class="team-region">EUROPA</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="tab-content" id="matches">
+                    <div class="matches-list">
+                        <div class="match-day">
+                            <div class="day-header">DIA 1 - JUNHO 7</div>
+                            <div class="match-card">
+                                <div class="match-time">13h00 (BRT) </div>
+                                <div class="match-teams">
+                                    <div class="team team-a">
+                                        <span>PAPER REX</span>
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;" src="/assets/times/PAPERREX_logo.png" alt=""></div>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team team-b">
+                                        <div class="team-logo-small"><img style="max-width: 40px; margin:-2px;" src="/assets/times/HERETICS_logo.webp" alt=""></div>
+                                        <span>HERETICS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="match-card">
+                                <div class="match-time">16h00 (BRT)</div>
+                                <div class="match-teams">
+                                    <div class="team team-a">
+                                        <span>BILIBILI</span>
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;" src="/assets/times/Bilibili-Gaming-logo.png" alt=""></div>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team team-b">
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 2px;" src="/assets/times/Teamliquid_logo.png" alt=""></div>
+                                        <span>TEAM LIQUID</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="match-day">
+                            <div class="day-header">DIA 2 - JUNHO 8</div>
+                            <div class="match-card">
+                                <div class="match-time">13h00 (BRT)</div>
+                                <div class="match-teams">
+                                    <div class="team team-a">
+                                        <span>SENTINELS</span>
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 35px;margin: 8px auto;" src="/assets/times/Sentinels_logo.png" alt=""></div>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team team-b">
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 30px;margin: 4px;" src="/assets/times/Wolves_logo.png" alt=""></div>
+                                        <span>WOLVES ESPORTS</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="match-card">
+                                <div class="match-time">16h00 (BRT)</div>
+                                <div class="match-teams">
+                                    <div class="team team-a">
+                                        <span>MIBR</span>
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 35px;margin: 1px;" src="/assets/times/MIBR_logo.png" alt=""></div>
+                                    </div>
+                                    <div class="vs">VS</div>
+                                    <div class="team team-b">
+                                        <div style="text-align: center;" class="team-logo-small"><img style="max-width: 23px;margin: 
                         9px; margin-left: 8px;" src="/assets/times/Gen.G_logo.png" alt=""></div>
-                    <span>GENG</span>
-                  </div>
+                                        <span>GENG</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script src="/public/js/torneio.js"></script>
-    <script src="/public/js/script.js"></script>
+        </main>
+        <script src="/public/js/torneio.js"></script>
+        <script src="/public/js/script.js"></script>
 </body>
 
 </html>

@@ -1,106 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mapas Valorant</title>
     <link rel="stylesheet" href="/public/css/stylemapa.css" />
     <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
-  </head>
+</head>
 
-  <header style="position: relative" class="header">
+<header style="position: relative" class="header">
     <div class="divlogo">
-      <a class="logo" href="inicial.html">
-        <img
-          class="imglogo"
-          src="/assets/GERAL/valorant.png"
-          alt="Logo Valorant"
-        />
-      </a>
+        <a class="logo" href="inicial.html">
+            <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
+        </a>
     </div>
     <nav class="navbar">
-      <div class="navbar-div">
-        <a class="active" href="pagevalorant.html">Ínicio</a>
-        <a href="solucoes.html">Agentes</a>
-        <a href="/public/html/mapas.html">Mapas</a>
-        <a href="developers.html">Armas</a>
-        <a href="/public/html/torneio.html">Torneios</a>
-      </div>
-      <button class="valorant-play-btn pulse">Jogar</button>
+        <div class="navbar-div">
+            <a class="active" href="pagevalorant.html">Ínicio</a>
+            <a href="solucoes.html">Agentes</a>
+            <a href="/public/html/index.html">Mapas</a>
+            <a href="/public/html/armas.html">Armas</a>
+            <a href="/public/html/torneio.html">Torneios</a>
+        </div>
+        <button class="valorant-play-btn pulse">Jogar</button>
     </nav>
-  </header>
+</header>
 
-  <body>
+<body>
     <div class="site-container">
-      <main>
-        <div class="map-background"></div>
+        <main>
+            <div class="map-background"></div>
 
-        <div class="map-content">
-          <div class="map-info">
-            <div class="map-title-container">
-              <h1 class="map-title">ASCENT</h1>
-              <p class="map-subtitle">ITÁLIA</p>
-            </div>
-            <div class="map-description">
-              <p>
-                Um campo de batalha aberto para pequenas guerras de posição e
-                desgaste, dividido por um meio que ambas as equipes podem
-                disputar.
-              </p>
-            </div>
-            <div class="map-callouts">
-              <button onclick="redirecionar()" class="callout-button">VER MAIS SOBRE</button>
-            </div>
-          </div>
+            <div class="map-content">
+                <div class="map-info">
+                    <div class="map-title-container">
+                        <h1 class="map-title">ASCENT</h1>
+                        <p class="map-subtitle">ITÁLIA</p>
+                    </div>
+                    <div class="map-description">
+                        <p>
+                            Um campo de batalha aberto para pequenas guerras de posição e desgaste, dividido por um meio que ambas as equipes podem disputar.
+                        </p>
+                    </div>
+                    <div class="map-callouts">
+                        <button onclick="redirecionar()" class="callout-button">
+                VER MAIS SOBRE
+              </button>
+                    </div>
+                </div>
 
-          <div class="map-layout-container">
-            <div class="map-layout"></div>
-          </div>
-        </div>
+                <div class="map-layout-container">
+                    <div class="map-layout"></div>
+                </div>
+            </div>
 
-        <div class="maps-selector">
-          <div class="map-card active" data-map="ascent">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">ASCENT</div>
-          </div>
-          <div class="map-card" data-map="bind">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">BIND</div>
-          </div>
-          <div class="map-card" data-map="haven">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">HAVEN</div>
-          </div>
-          <div class="map-card" data-map="split">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">SPLIT</div>
-          </div>
-          <div class="map-card" data-map="icebox">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">ICEBOX</div>
-          </div>
-          <div class="map-card" data-map="breeze">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">BREEZE</div>
-          </div>
-          <div class="map-card" data-map="fracture">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">FRACTURE</div>
-          </div>
-          <div class="map-card" data-map="pearl">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">PEARL</div>
-          </div>
-          <div class="map-card" data-map="lotus">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">LOTUS</div>
-          </div>
-          <div class="map-card" data-map="sunset">
-            <div class="map-card-image"></div>
-            <div class="map-card-name">SUNSET</div>
-          </div>
-        </div>
-      </main>
+            <div class="maps-selector">
+                <div class="map-card active" data-map="ascent">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">ASCENT</div>
+                </div>
+                <div class="map-card" data-map="bind">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">BIND</div>
+                </div>
+                <div class="map-card" data-map="haven">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">HAVEN</div>
+                </div>
+                <div class="map-card" data-map="split">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">SPLIT</div>
+                </div>
+                <div class="map-card" data-map="icebox">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">ICEBOX</div>
+                </div>
+                <div class="map-card" data-map="breeze">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">BREEZE</div>
+                </div>
+                <div class="map-card" data-map="fracture">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">FRACTURE</div>
+                </div>
+                <div class="map-card" data-map="pearl">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">PEARL</div>
+                </div>
+                <div class="map-card" data-map="lotus">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">LOTUS</div>
+                </div>
+                <div class="map-card" data-map="sunset">
+                    <div class="map-card-image"></div>
+                    <div class="map-card-name">SUNSET</div>
+                </div>
+            </div>
+        </main>
     </div>
 
     <audio id="hover-sound" preload="auto"></audio>
@@ -110,5 +107,6 @@
 
     <script type="module" src="/public/js/scriptmapa.js"></script>
     <script src="/public/js/script.js"></script>
-  </body>
+</body>
+
 </html>
