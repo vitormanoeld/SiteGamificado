@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Layout Armas Centralizado</title>
+  
+</head>
+<body>
+  <!-- Texto Esquerda -->
+  <div class="info">
+    <h1 id="infoTitle"></h1>
+    <p id="infoText"></p>
+  </div>
+
+  <!-- Carrossel Direita -->
+  <div class="scene">
+    <div class="container">
+      <div class="word front" data-name="VANDAL">
+        <img src="assets/armas/vandal/Vandal.webp" alt="Imagem VANDAL" />
+        <span>VANDAL</span>
+      </div>
+      <div class="word middle" data-name="PHANTOM">
+        <img src="assets/armas/phanton/phantpm.png" alt="Imagem PHANTOM" />
+        <span>PHANTOM</span>
+      </div>
+      <div class="word back" data-name="OPERATOR">
+        <img src="assets/armas/operator/Operator.webp" alt="Imagem OPERATOR" />
+        <span>OPERATOR</span>
+      </div>
+    </div>
+  </div>
+
+  <button onclick="rotateWords()">⏩</button>
+
+  <!-- Grid de imagens no centro -->
+  <div class="image-grid" id="imageGrid"></div>
+
+  <script>
+    const words = Array.from(document.querySelectorAll('.word'));
+    const titleEl = document.getElementById('infoTitle');
+    const textEl = document.getElementById('infoText');
+    const gridEl = document.getElementById('imageGrid');
+
+    const data = {
+      VANDAL: {
+        desc: "A Vandal é uma rifle poderosa que causa dano constante em qualquer distância.",
+        images: [
+          "caminho/para/vandal1.jpg",
+          "caminho/para/vandal2.jpg",
+          "caminho/para/vandal3.jpg"
+        ]
+      },
+      PHANTOM: {
+        desc: "A Phantom possui alta cadência de tiro e é eficaz em curta e média distância.",
+        images: [
+          "caminho/para/phantom1.jpg",
+          "caminho/para/phantom2.jpg",
+          "caminho/para/phantom3.jpg"
+        ]
+      },
+      OPERATOR: {
+        desc: "O Operator é um rifle de precisão com alto dano, ideal para eliminar com um tiro só.",
+        images: [
+          "caminho/para/operator1.jpg",
+          "caminho/para/operator2.jpg",
+          "caminho/para/operator3.jpg"
+        ]
+      }
+    };
+
+    function rotateWords() {
+      const first = words.shift();
+      words.push(first);
+
+      words.forEach(word => word.className = 'word');
+      words[0].classList.add('front');
+      words[1].classList.add('middle');
+      words[2].classList.add('back');
+
+      updateContent();
+    }
+
+    function updateContent() {
+      const current = words[0].getAttribute('data-name');
+      titleEl.textContent = current;
+      textEl.textContent = data[current].desc;
+
+      // Atualiza imagens
+      gridEl.innerHTML = "";
+      data[current].images.forEach(src => {
+        const img = document.createElement("img");
+        img.src = src;
+        gridEl.appendChild(img);
+      });
+    }
+
+    updateContent();
+  </script>
+</body>
+</html>

@@ -197,7 +197,7 @@ h1 {
     letter-spacing: 1px;
     cursor: pointer;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+    
 }
 
 .btn-filled {
@@ -235,7 +235,7 @@ h1 {
 .btn-filled:hover {
     border-color: #ff4655;
     color: #000000;
-    transform: translateY(-2px);
+   
 }
 
 .btn-filled:hover::before {
@@ -303,7 +303,7 @@ h1 {
 }
 
 .minimal-btn:active {
-    transform: translateY(0px) scale(0.98);
+    
 }
 
 .btn-text {
