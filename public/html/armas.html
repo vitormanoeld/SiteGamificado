@@ -1,74 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/armas.css" />
     <link rel="stylesheet" href="/public/css/stylemapa.css" />
     <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Layout Armas Centralizado</title>
     <style>
-        .buttons {
-            top: -5%;
-            left: 2%;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      video#meuVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: -1;
+        opacity: 0.4;
+        display: block;
+      }
+      .buttons {
+        top: -5%;
+        left: 2%;
+      }
+      .btn-text:hover {
+        color: rgb(255, 255, 255);
+      }
     </style>
-</head>
-<header style="position: relative" class="header">
-    <div class="divlogo">
+  </head>
+  <body>
+    <video id="meuVideo" autoplay muted loop>
+      <source src="/assets/GERAL/valorant.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo.
+    </video>
+    <header class="header">
+      <div class="divlogo">
         <a class="logo" href="inicial.html">
-            <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
+          <img
+            class="imglogo"
+            src="/assets/GERAL/valorant.png"
+            alt="Logo Valorant"
+          />
         </a>
-    </div>
-    <nav class="navbar">
+      </div>
+      <nav class="navbar">
         <div class="navbar-div">
-            <a class="active" href="pagevalorant.html">Ínicio</a>
-            <a href="solucoes.html">Agentes</a>
-            <a href="/public/html/index.html">Mapas</a>
-            <a href="/public/html/armas.html">Armas</a>
-            <a href="/public/html/torneio.html">Torneios</a>
+          <a class="active" href="pagevalorant.html">Ínicio</a>
+          <a href="solucoes.html">Agentes</a>
+          <a href="/public/html/index.html">Mapas</a>
+          <a href="/public/html/armas.html">Armas</a>
+          <a href="/public/html/torneio.html">Torneios</a>
         </div>
         <button onclick="redirecionar()" class="valorant-play-btn pulse">
-            Jogar
-          </button>
-    </nav>
-</header>
+          Jogar
+        </button>
+      </nav>
+    </header>
 
-<body>
     <!-- Texto Esquerda -->
     <div class="info">
-        <h1 id="infoTitle"></h1>
-        <p id="infoText"></p>
+      <h1 id="infoTitle"></h1>
+      <p id="infoText"></p>
     </div>
 
     <!-- Carrossel Direita -->
     <div class="scene">
-        <div class="container">
-            <div class="word front" id="" data-name="VANDAL">
-                <img src="/assets/armas/vandal/Vandal.webp" alt="Imagem VANDAL" />
-                <span>VANDAL</span>
-            </div>
-            <div class="word middle" data-name="PHANTOM">
-                <img src="/assets/armas/phanton/phantpm.png" alt="Imagem PHANTOM" />
-                <span>PHANTOM</span>
-            </div>
-            <div class="word back" data-name="OPERATOR">
-                <img src="/assets/armas/operator/Operator.webp" alt="Imagem OPERATOR" />
-                <span>OPERATOR</span>
-            </div>
+      <div class="container">
+        <div class="word front" id="" data-name="VANDAL">
+          <img src="/assets/armas/vandal/Vandal.webp" alt="Imagem VANDAL" />
+          <span>VANDAL</span>
         </div>
+        <div class="word middle" data-name="PHANTOM">
+          <img src="/assets/armas/phanton/phantpm.png" alt="Imagem PHANTOM" />
+          <span>PHANTOM</span>
+        </div>
+        <div class="word back" data-name="OPERATOR">
+          <img
+            src="/assets/armas/operator/Operator.webp"
+            alt="Imagem OPERATOR"
+          />
+          <span>OPERATOR</span>
+        </div>
+      </div>
     </div>
 
     <!-- Grid de imagens no centro -->
-    <div class="image-grid" id="imageGrid">
-
-    </div>
-    <div style="margin-left: 51rem;margin-top: 45%;" class="buttons">
-        <button onclick="rotateWords()" class="minimal-btn btn-filled">
+    <div class="image-grid" id="imageGrid"></div>
+    <div style="margin-left: 51rem; margin-top: 45%" class="buttons">
+      <button onclick="rotateWords()" class="minimal-btn btn-filled">
         <div class="scan-effect"></div>
         <div class="corner-dots"></div>
         <div class="corner-dots"></div>
@@ -77,8 +106,7 @@
         <span class="btn-text">MUDAR ARMA</span>
       </button>
     </div>
-    <video id="meuVideo" autoplay muted loop style="position:fixed; top:0; left:0; width:100vw; height:100vh; object-fit:cover; z-index:-1; display:block;opacity: 0.4;"></video>
+   
     <script src="/public/js/armas.js"></script>
-</body>
-
+  </body>
 </html>

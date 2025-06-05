@@ -302,8 +302,8 @@ h1 {
     left: 100%;
 }
 
-.minimal-btn:active {
-    
+.minimal-btn:hover {
+    color: white;
 }
 
 .btn-text {
@@ -313,12 +313,13 @@ h1 {
     font-family: 'Valorant', sans-serif;
 }
 
+
 .btn-filled:hover .btn-text {
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .btn-outline:hover .btn-text {
-    text-shadow: 0 0 15px rgba(255, 70, 85, 0.5);
+    text-shadow: 0 0 15px rgba(255, 250, 251, 0.5);
 }
 
 .corner-dots {

@@ -3,6 +3,7 @@
       padding: 0;
       box-sizing: border-box;
        font-family: "Poppins", sans-serif;
+       cursor: pointer;
     }
 
 
@@ -10,7 +11,7 @@
     .info {
       position: absolute;
       left: 100px;
-      top: 44%;
+      top: 42%;
       transform: translateY(-50%);
       text-align: left;
       width: 20%;
@@ -109,8 +110,10 @@
       bottom: 150px;
       left: 50%;
       transform: translateX(-50%);
+
       display: flex;
       gap: 20px;
+      justify-content: center;
     }
 
     .image-grid img {
