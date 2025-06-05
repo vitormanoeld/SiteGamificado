@@ -14,20 +14,20 @@
       top: 42%;
       transform: translateY(-50%);
       text-align: left;
-      width: 20%;
+      width: 30%;
       
     }
 
     .info h1 {
-      font-size: 4em;
+      font-size: 5em;
       color: #ff4655;
       margin-bottom: 10px;
-       font-family: "Poppins", sans-serif;
+       font-family: 'Valorant';
        letter-spacing: 8px;
     }
 
     .info p {
-      font-size: 15px;
+      font-size: 20px;
       color: #ffffffcc;
       line-height: 30px;
     }
@@ -112,16 +112,16 @@
       transform: translateX(-50%);
 
       display: flex;
-      gap: 20px;
+      gap: 50px;
       justify-content: center;
     }
 
     .image-grid img {
-      width: 100px;
-      height: 90px;
+      width: 90px;
+      height: 60px;
       object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+      box-shadow: 0 0 10px rgba(255, 254, 254, 0.3);
       transition: transform 0.3s;
     }
 

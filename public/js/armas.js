@@ -8,15 +8,15 @@ const data = {
     desc: "A Vandal é uma rifle poderosa que causa dano constante em qualquer distância.",
     images: [
       "/assets/armas/vandal/Primordium_Vandal.webp",
-      "/assets/armas/vandal/Reaver_Vandal.webp",
-      "/assets/armas/vandal/Vandal_vingaca-gaia.webp",
+      "/assets/armas/vandal/Skin_vandal_exo.webp",
+      "/assets/armas/vandal/Skin_evori.webp",
     ],
   },
   PHANTOM: {
     desc: "A Phantom possui alta cadência de tiro e é eficaz em curta e média distância.",
     images: [
-      "/assets/armas/phanton/phantom-primordium.webp",
-      "/assets/armas/phanton/phanton-gaia.webp",
+      "/assets/armas/phanton/phantom-nocturnum.webp",
+      "/assets/armas/phanton/phantom-champions.webp",
       "/assets/armas/phanton/phantom-skin.png",
     ],
   },
@@ -108,13 +108,13 @@ function iniciarVideoDeFundo(arma, idx) {
   if (!video) return;
   const videos = {
     VANDAL: [
-      "/assets/GERAL/valorant.mp4",
-      "/assets/GERAL/valorant.mp4",
-      "/assets/GERAL/valorant.mp4",
+      "/assets/armas/vandal/Video-primordium.mp4",
+      "/assets/armas/vandal/Video-exo.mp4",
+      "/assets/armas/vandal/Vandal_evori.mp4",
     ],
     PHANTOM: [
-      "/assets/videos/phantom1.mp4",
-      "/assets/videos/phantom2.mp4",
+      "/assets/armas/phanton/Phantom_nocturn.mp4",
+      "/assets/armas/phanton/panthom-camp24.mp4",
       "/assets/videos/phantom3.mp4",
     ],
     OPERATOR: [
