@@ -7,27 +7,35 @@ const data = {
   VANDAL: {
     desc: "A Vandal é uma rifle poderosa que causa dano constante em qualquer distância.",
     images: [
-      "/assets/armas/vandal/Primordium_Vandal.webp",
-      "/assets/armas/vandal/Skin_vandal_exo.webp",
-      "/assets/armas/vandal/Skin_evori.webp",
+      "http://localhost:3000/imagens/primordium-skin.png",
+      "http://localhost:3000/imagens/vandal-singularity.png",
+      "http://localhost:3000/imagens/vandal-champ.png",
+      "http://localhost:3000/imagens/vandal-divergence.png",
     ],
   },
   PHANTOM: {
     desc: "A Phantom possui alta cadência de tiro e é eficaz em curta e média distância.",
     images: [
-      "/assets/armas/phanton/phantom-nocturnum.webp",
-      "/assets/armas/phanton/phantom-champions.webp",
-      "/assets/armas/phanton/phantom-skin.png",
+      "http://localhost:3000/imagens/phantom-nocturnum.webp",
+      "http://localhost:3000/imagens/phantom-champions.webp",
+      "http://localhost:3000/imagens/skin-phantom-rosa.png",
     ],
   },
   OPERATOR: {
     desc: "O Operator é um rifle de precisão com alto dano, ideal para eliminar com um tiro só.",
     images: [
-      "/assets/armas/operator/Araxys_Operator.webp",
-      "/assets/armas/operator/Divergence_Operator.webp",
-      "/assets/armas/operator/Mystbloom_Operator.webp",
+      "http://localhost:3000/imagens/Araxys_Operator.webp",
+      "http://localhost:3000/imagens/op-div.png",
+      "http://localhost:3000/imagens/Mystbloom_Operator.webp",
     ],
   },
+};
+
+// Vídeos padrão para cada aba
+const defaultVideos = {
+  VANDAL: "http://localhost:3000/videos/video-primordium.mp4",
+  PHANTOM: "http://localhost:3000/videos/Phantom_nocturn.mp4",
+  OPERATOR: "http://localhost:3000/videos/op-araxys-vid.mp4",
 };
 
 function rotateWords() {
@@ -108,19 +116,20 @@ function iniciarVideoDeFundo(arma, idx) {
   if (!video) return;
   const videos = {
     VANDAL: [
-      "/assets/armas/vandal/Video-primordium.mp4",
-      "/assets/armas/vandal/Video-exo.mp4",
-      "/assets/armas/vandal/Vandal_evori.mp4",
+      "http://localhost:3000/videos/video-primordium.mp4",
+      "http://localhost:3000/videos/video-singularity.mp4",
+      "http://localhost:3000/videos/video-champ.mp4",
+      "http://localhost:3000/videos/skin-divergence.mp4",
     ],
     PHANTOM: [
-      "/assets/armas/phanton/Phantom_nocturn.mp4",
-      "/assets/armas/phanton/panthom-camp24.mp4",
-      "/assets/videos/phantom3.mp4",
+      "http://localhost:3000/videos/Phantom_nocturn.mp4",
+      "http://localhost:3000/videos/panthom-camp24.mp4",
+      "http://localhost:3000/videos/phantom-rosa.mp4",
     ],
     OPERATOR: [
-      "/assets/videos/operator1.mp4",
-      "/assets/videos/operator2.mp4",
-      "/assets/videos/operator3.mp4",
+      "http://localhost:3000/videos/op-araxys-vid.mp4",
+      "http://localhost:3000/videos/op-div-vid.mp4",
+      "http://localhost:3000/videos/op-myst-vid.mp4",
     ],
   };
   video.src = videos[arma][idx];
@@ -131,6 +140,15 @@ function updateContent() {
   const current = words[0].getAttribute("data-name");
   titleEl.textContent = current;
   textEl.textContent = data[current].desc;
+
+  // Iniciar vídeo padrão para cada aba
+  // Iniciar vídeo padrão para cada aba
+  const video = document.getElementById("meuVideo");
+  if (video && defaultVideos[current]) {
+    video.src = defaultVideos[current];
+    video.play().catch((e) => console.log("Erro ao reproduzir vídeo:", e));
+  }
+
   if (current === "VANDAL") renderVandal();
   else if (current === "PHANTOM") renderPhantom();
   else if (current === "OPERATOR") renderOperator();
@@ -139,9 +157,16 @@ updateContent();
 
 function trocarVideo(arma) {
   const video = document.getElementById("meuVideo");
-  video.src = videos[arma];
-  video.play();
+  if (defaultVideos[arma]) {
+    video.src = defaultVideos[arma];
+    video.play().catch((e) => console.log("Erro ao reproduzir vídeo:", e));
+  }
 }
+
 window.onload = () => {
-  document.getElementById("meuVideo").src = videos.VANDAL;
+  const video = document.getElementById("meuVideo");
+  if (video) {
+    video.src = defaultVideos.VANDAL;
+    video.play().catch((e) => console.log("Erro ao reproduzir vídeo:", e));
+  }
 };
