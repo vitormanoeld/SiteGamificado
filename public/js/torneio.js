@@ -1,7 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".tab");
   const tabContents = document.querySelectorAll(".tab-content");
-  
+
+  if (tabs.length && !document.querySelector('.tab.active')) {
+    tabs[0].classList.add('active');
+  }
+  if (tabContents.length && !document.querySelector('.tab-content.active')) {
+    tabContents[0].classList.add('active');
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       const tabId = tab.getAttribute("data-tab");

@@ -105,7 +105,9 @@ h1 {
 .navbar a:hover::after,
 .navbar a.active::after {
     width: 100%;
+    background: #ff4655; /* vermelho Valorant */
 }
+
 
 .navbar a:hover,
 .navbar a.active {

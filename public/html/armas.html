@@ -39,6 +39,105 @@
       .btn-text:hover {
         color: rgb(255, 255, 255);
       }
+        .stats-container {
+            background: #1e232800;
+           
+            border-radius: 4px;
+            padding: 30px 40px;
+            width: 400px;
+            margin-top: 24%;
+            margin-left:60px;
+        }
+        
+        .stat-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
+        
+        .stat-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .stat-label {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            width: 80px;
+            flex-shrink: 0;
+        }
+        
+        .stat-bar-container {
+            flex: 1;
+            height: 4px;
+            background: #2C3338;
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .stat-bar {
+            height: 100%;
+            border-radius: 2px;
+            position: relative;
+            transition: all 0.3s ease;
+            animation: fillBar 1.5s ease-out;
+        }
+        
+        @keyframes fillBar {
+            from { width: 0 !important; }
+        }
+        
+        .stat-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 4px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-row:hover .stat-bar::after {
+            opacity: 1;
+        }
+        
+        .stat-row:hover .stat-label {
+            color: #ECE8E1;
+        }
+        
+        .state-valorant-damage .stat-bar {
+            background: linear-gradient(90deg, #FF4655 0%, #FF6B7A 100%);
+            width: 95%;
+            box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+        }
+        
+        .state-valorant-fire-rate .stat-bar {
+            background: linear-gradient(90deg, #FF4655 0%, #FF6B7A 100%);
+            width: 75%;
+            box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+        }
+        
+        .state-valorant-range .stat-bar {
+            background: linear-gradient(90deg, #FF4655 0%, #FF6B7A 100%);
+            width: 100%;
+            box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+        }
+        
+        .stat-row:hover .stat-bar {
+            transform: scaleY(1.5);
+            filter: brightness(1.2);
+        }
+        
+        .stat-bar-container:hover {
+            background: #3A4249;
+        }
     </style>
   </head>
 
@@ -59,7 +158,7 @@
       </div>
       <nav class="navbar">
         <div class="navbar-div">
-          <a class="active" href="pagevalorant.html">Ínicio</a>
+          <a  href="pagevalorant.html">Ínicio</a>
           <a href="solucoes.html">Agentes</a>
           <a href="/public/html/index.html">Mapas</a>
           <a href="/public/html/armas.html">Armas</a>
@@ -76,21 +175,42 @@
       <h1 id="infoTitle"></h1>
       <p id="infoText"></p>
     </div>
+    <div class="stats-container">
+        <div class="stat-row state-valorant-damage">
+            <div class="stat-label">Damage</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row state-valorant-fire-rate">
+            <div class="stat-label">Fire Rate</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar"></div>
+            </div>
+        </div>
+        
+        <div class="stat-row state-valorant-range">
+            <div class="stat-label">Range</div>
+            <div class="stat-bar-container">
+                <div class="stat-bar"></div>
+            </div>
+        </div>
 
     <!-- Carrossel Direita -->
     <div class="scene">
       <div class="container">
         <div class="word front" id="" data-name="VANDAL">
-          <img src="/assets/armas/vandal/Vandal.webp" alt="Imagem VANDAL" />
+          <img src="http://localhost:3000/imagens//Vandal.webp" alt="Imagem VANDAL" />
           <span>VANDAL</span>
         </div>
         <div class="word middle" data-name="PHANTOM">
-          <img src="/assets/armas/phanton/phantpm.png" alt="Imagem PHANTOM" />
+          <img src="http://localhost:3000/imagens/phantpm.png" alt="Imagem PHANTOM" />
           <span>PHANTOM</span>
         </div>
         <div class="word back" data-name="OPERATOR">
           <img
-            src="/assets/armas/operator/Operator.webp"
+            src="http://localhost:3000/imagens/Operator.webp"
             alt="Imagem OPERATOR"
           />
           <span>OPERATOR</span>
@@ -112,5 +232,12 @@
     </div>
 
     <script src="/public/js/armas.js"></script>
+    <script>
+// filepath: d:\Users\1039411\Downloads\SiteGamificado\public\html\armas.html
+function ativarLink(elemento) {
+  document.querySelectorAll('.navbar-div a').forEach(link => link.classList.remove('active'));
+  elemento.classList.add('active');
+}
+</script>
   </body>
 </html>

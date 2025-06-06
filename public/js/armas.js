@@ -6,6 +6,11 @@ const gridEl = document.getElementById("imageGrid");
 const data = {
   VANDAL: {
     desc: "A Vandal é uma rifle poderosa que causa dano constante em qualquer distância.",
+    stats: {
+      damage: 95,
+      fireRate: 75,
+      range: 85,
+    },
     images: [
       "http://localhost:3000/imagens/primordium-skin.png",
       "http://localhost:3000/imagens/vandal-singularity.png",
@@ -15,6 +20,11 @@ const data = {
   },
   PHANTOM: {
     desc: "A Phantom possui alta cadência de tiro e é eficaz em curta e média distância.",
+    stats: {
+      damage: 80,
+      fireRate: 90,
+      range: 70,
+    },
     images: [
       "http://localhost:3000/imagens/phantom-nocturnum.webp",
       "http://localhost:3000/imagens/phantom-champions.webp",
@@ -23,6 +33,11 @@ const data = {
   },
   OPERATOR: {
     desc: "O Operator é um rifle de precisão com alto dano, ideal para eliminar com um tiro só.",
+    stats: {
+      damage: 100,
+      fireRate: 30,
+      range: 95,
+    },
     images: [
       "http://localhost:3000/imagens/Araxys_Operator.webp",
       "http://localhost:3000/imagens/op-div.png",
@@ -37,6 +52,30 @@ const defaultVideos = {
   PHANTOM: "http://localhost:3000/videos/Phantom_nocturn.mp4",
   OPERATOR: "http://localhost:3000/videos/op-araxys-vid.mp4",
 };
+
+function updateStats(weapon) {
+  const stats = data[weapon].stats;
+
+  // Atualizar barra de damage
+  const damageBar = document.querySelector(".state-valorant-damage .stat-bar");
+  if (damageBar) {
+    damageBar.style.width = stats.damage + "%";
+  }
+
+  // Atualizar barra de fire rate
+  const fireRateBar = document.querySelector(
+    ".state-valorant-fire-rate .stat-bar"
+  );
+  if (fireRateBar) {
+    fireRateBar.style.width = stats.fireRate + "%";
+  }
+
+  // Atualizar barra de range
+  const rangeBar = document.querySelector(".state-valorant-range .stat-bar");
+  if (rangeBar) {
+    rangeBar.style.width = stats.range + "%";
+  }
+}
 
 function rotateWords() {
   const first = words.shift();
@@ -141,8 +180,8 @@ function updateContent() {
   titleEl.textContent = current;
   textEl.textContent = data[current].desc;
 
-  // Iniciar vídeo padrão para cada aba
-  // Iniciar vídeo padrão para cada aba
+  updateStats(current);
+
   const video = document.getElementById("meuVideo");
   if (video && defaultVideos[current]) {
     video.src = defaultVideos[current];
@@ -153,6 +192,7 @@ function updateContent() {
   else if (current === "PHANTOM") renderPhantom();
   else if (current === "OPERATOR") renderOperator();
 }
+
 updateContent();
 
 function trocarVideo(arma) {
