@@ -1,6 +1,22 @@
 {
   "liveServer.settings.port": 5500,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "Banco_valorant",
+      "database": "banco_valorant",
+      "password": "vitor99.",
+      "username": "usuario_valorant"
+    }
+  ]
   
 }

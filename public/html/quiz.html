@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Valorant</title>
+  <style>
+    body { font-family: sans-serif; background: #0f1923; color: white; text-align: center; }
+    .quiz-box { max-width: 500px; margin: auto; padding: 20px; background: #1f2a36; border-radius: 10px; }
+    button { margin-top: 10px; padding: 10px; background: #ff4655; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="quiz-box">
+    <h2>Quiz Difícil sobre Valorant</h2>
+    <div id="start">
+      <input type="text" id="nomeJogador" placeholder="Seu nome" required />
+      <button onclick="comecarQuiz()">Começar</button>
+    </div>
+    <div id="quiz" class="hidden">
+      <p id="pergunta"></p>
+      <div id="opcoes"></div>
+      <button onclick="proxima()">Próxima</button>
+    </div>
+    <div id="resultado" class="hidden"></div>
+  </div>
+
+  <script>
+    const perguntas = [
+      {
+        pergunta: "Qual agente tem a habilidade 'Caçador de Cabeças'?",
+        opcoes: ["Jett", "Chamber", "Phoenix", "Raze"],
+        resposta: "Chamber"
+      },
+      {
+        pergunta: "Quantos pontos de ultimate são necessários para usar a ult da Reyna?",
+        opcoes: ["6", "7", "8", "5"],
+        resposta: "6"
+      },
+      {
+        pergunta: "Qual mapa possui o local 'B Main'?",
+        opcoes: ["Bind", "Ascent", "Fracture", "Icebox"],
+        resposta: "Ascent"
+      },
+      {
+        pergunta: "O que a habilidade 'Viper’s Pit' faz?",
+        opcoes: ["Envenena os inimigos com um tiro", "Cria uma parede venenosa", "Cria uma nuvem de veneno", "Cria uma área de veneno que reduz a visão"],
+        resposta: "Cria uma área de veneno que reduz a visão"
+      },
+      {
+        pergunta: "Qual agente pode plantar uma torre de vigilância?",
+        opcoes: ["Sage", "Killjoy", "Cypher", "Sova"],
+        resposta: "Killjoy"
+      }
+    ];
+
+    let nome = '';
+    let indice = 0;
+    let acertos = 0;
+
+    function comecarQuiz() {
+      nome = document.getElementById('nomeJogador').value.trim();
+      if (!nome) return alert('Digite seu nome!');
+      document.getElementById('start').classList.add('hidden');
+      document.getElementById('quiz').classList.remove('hidden');
+      mostrarPergunta();
+    }
+
+    function mostrarPergunta() {
+      const q = perguntas[indice];
+      document.getElementById('pergunta').textContent = q.pergunta;
+      const opcoesDiv = document.getElementById('opcoes');
+      opcoesDiv.innerHTML = '';
+      q.opcoes.forEach(opcao => {
+        const btn = document.createElement('button');
+        btn.textContent = opcao;
+        btn.onclick = () => {
+          if (opcao === q.resposta) acertos++;
+          proxima();
+        };
+        opcoesDiv.appendChild(btn);
+      });
+    }
+
+    function proxima() {
+      indice++;
+      if (indice < perguntas.length) {
+        mostrarPergunta();
+      } else {
+        document.getElementById('quiz').classList.add('hidden');
+        const resultado = `Você acertou ${acertos} de ${perguntas.length} perguntas.`;
+        document.getElementById('resultado').innerHTML = `<h3>${resultado}</h3>`;
+        document.getElementById('resultado').classList.remove('hidden');
+        salvarResultado();
+      }
+    }
+
+    function salvarResultado() {
+      fetch('http://localhost:3006/salvar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nome, pontuacao: acertos })
+      })
+      .then(res => res.text())
+      .then(msg => console.log(msg))
+      .catch(err => console.error('Erro ao salvar:', err));
+    }
+  </script>
+</body>
+</html>
