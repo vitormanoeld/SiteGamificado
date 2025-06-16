@@ -73,10 +73,10 @@ h1 {
     align-items: center;
     gap: 20px;
     height: 8vh;
-    margin-top: -70px;
+    margin-top: -60px;
     padding: 0;
     position: absolute;
-    margin-left: 0px;
+    margin-left: -40px;
 }
 
 .navbar a {

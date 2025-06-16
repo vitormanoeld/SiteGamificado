@@ -1,1 +1,0 @@
-<!-- ideia de carrousel lateral com as armas vindo para frebte e quando ela aparecer um minivideo roda de fundo da arma e tera 3 posiveis vairacoes de skn se eu escolher outra variacao vai comecar a rodar o video de fundo da cutcine da skin de arma -->

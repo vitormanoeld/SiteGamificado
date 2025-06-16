@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Inicial</title>
+    <meta name="description" content="Página sobre Valorant com informações de agentes, mapas, armas e torneios." />
+    <link rel="stylesheet" href="/public/css/stylesvalorant.css" />
+    <link rel="stylesheet" href="/public/css/quiz.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        h1{
+             font-family: "Poppins", sans-serif;
+             letter-spacing: 10px
+        }
+        .minimal-btn{
+            border-radius: 10px;
+            background: linear-gradient(90deg, #ff4655);
+        }
+        .welcome-title{
+            margin-left: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <section>
+        <div class="background-container"></div>
+
+        <div class="divlogo">
+            <a class="logo" href="inicial.html">
+                <img class="imglogo" src="/assets/GERAL/valorant.png" alt="Logo Valorant" />
+            </a>
+        </div>
+
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar-div">
+                    <a class="active" href="pagevalorant.html">Ínicio</a>
+                    <a href="solucoes.html">Agentes</a>
+                    <a href="/public/html/index.html">Mapas</a>
+                    <a href="/public/html/armas.html">Armas</a>
+                    <a href="/public/html/torneio.html">Torneios</a>
+                    <a href="/public/html/adivinhe.html">Adivinhe</a>
+                </div>
+                <button onclick="redirecionar()" class="valorant-play-btn pulse">
+                    Jogar
+                </button>
+            </nav>
+        </header>
+    </section>
+
+    <div class="container">
+        <!-- Tela de Boas-vindas -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <h1 class="welcome-title">Adivinhe o Elo</h1>
+            
+            <div class="user-input-section">
+                <input 
+                    type="text" 
+                    id="userName" 
+                    class="user-input" 
+                    placeholder="Seu nome aqui..."
+                    maxlength="20"
+                    autocomplete="off"
+                />
+            </div>
+            
+            <button onclick="startGame()" id="startBtn" class="minimal-btn btn-outline">
+                <div class="scan-effect"></div>
+                <div class="corner-dots"></div>
+                <div class="corner-dots"></div>
+                <div class="corner-dots"></div>
+                <div class="corner-dots"></div>
+                <span class="btn-text">JOGAR AGORA</span>
+            </button>
+        </div>
+
+        <!-- Tela do Jogo -->
+        <div class="game-screen" id="gameScreen">
+            <div class="player-greeting" id="playerGreeting"></div>
+            <div class="score-section">
+                <div class="score-container">
+                    <span class="score-label">Pontos:</span>
+                    <span id="scoreDisplay" class="score-value">0</span>
+                </div>
+                <div class="lives-container">
+                    <span class="lives-label">Vidas:</span>
+                    <span id="livesDisplay" class="lives-value">3</span>
+                </div>
+            
+            <div class="video-container">
+                <video id="gameVideo" controls muted loop>
+                    Seu navegador não suporta vídeos.
+                </video>
+            </div>
+
+            <div class="elos-section">
+                <div class="elos-container" id="elosContainer">
+                    <!-- Botões dos elos serão inseridos aqui -->
+                </div>
+            </div>
+
+            <!-- Botão Próximo Vídeo -->
+            <button style="margin-top: -30px;"  class="minimal-btn btn-outline" id="nextBtn" onclick="loadNewVideo()">
+                 Próximo Vídeo
+            </button>
+        </div>
+    </div>
+
+    <!-- Overlay de Ícone de Resultado -->
+    <div class="result-icon-overlay hidden" id="resultIconOverlay">
+        <div class="result-icon" id="resultIcon"></div>
+    </div>
+
+    <script src="/public/js/quiz.js">
+    </script>
+</body>
+</html>
