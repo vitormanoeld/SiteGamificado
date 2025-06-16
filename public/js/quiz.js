@@ -72,7 +72,10 @@ async function startGame() {
         const response = await fetch(`${API_BASE_URL}/api/salvar-nome`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nome: playerName, dataEntrada: dataHoraEntrada })
+            body: JSON.stringify({ 
+                nome: playerName, 
+                dataEntrada: dataHoraEntrada,
+            })
         });
 
         const data = await response.json();
@@ -176,6 +179,9 @@ async function checkAnswer(selectedElo) {
     atualizarDisplay();
     gameState = 'answered';
 
+    // Atualizar pontuação no banco de dados em tempo real
+    await atualizarPontuacaoNoBanco();
+
     document.querySelectorAll('.elo-btn').forEach(btn => {
         btn.disabled = true;
         const btnElo = btn.querySelector('.elo-name').textContent.toLowerCase();
@@ -192,10 +198,27 @@ async function checkAnswer(selectedElo) {
     showResultIcon(isCorrect);
 
     if (vidas <= 0) {
-        await salvarPontuacao();
         alert(`Fim de jogo! Sua pontuação final foi ${pontos}.`);
         resetGame();
         return;
+    }
+}
+
+// Nova função para atualizar pontuação no banco em tempo real
+async function atualizarPontuacaoNoBanco() {
+    if (!jogadorId) return;
+
+    try {
+        await fetch(`${API_BASE_URL}/api/atualizar-pontuacao`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                jogadorId: jogadorId,
+                pontuacao: pontos 
+            })
+        });
+    } catch (error) {
+        console.error('Erro ao atualizar pontuação:', error);
     }
 }
 
@@ -243,39 +266,7 @@ function resetButtons() {
     if (nextBtn) nextBtn.classList.add('hidden');
 }
 
-async function salvarPontuacao() {
-    try {
-        if (!jogadorId) {
-            console.error('ID do jogador não definido');
-            return;
-        }
-
-        const response = await fetch(`${API_BASE_URL}/api/salvar-pontuacao`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                id: jogadorId,
-                pontuacao: pontos
-            })
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('Erro ao salvar pontuação:', errorData);
-            return;
-        }
-
-        const data = await response.json();
-        console.log('Pontuação salva com sucesso:', data);
-
-    } catch (error) {
-        console.error('Erro ao salvar pontuação:', error);
-    }
-}
-
+// Removemos a função salvarPontuacao pois agora atualizamos em tempo real
 function resetGame() {
     pontos = 0;
     vidas = 3;
