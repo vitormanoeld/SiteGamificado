@@ -263,10 +263,17 @@ main {
 .map-card[data-map="sunset"] .map-card-image {
     background-image: url('/assets/sunset/sunset.png');
 }
+.map-card[data-map="abyss"] .map-card-image {
+    background-image: url('/assets/abyss/background-abyss.jpg');
+}
 
 
 /* ========== MEDIA QUERIES ========== */
-
+@media (min-width:1920px){
+    .maps-selector{
+        top: 70%;
+    }
+}
 @media (max-width: 1200px) {
     .maps-selector {
         grid-template-columns: repeat(3, 1fr);
