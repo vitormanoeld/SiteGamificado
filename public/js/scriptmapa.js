@@ -1,4 +1,4 @@
-// Função simples para pegar imagem da API
+
 const getAgentImage = (agentName) => {
   const name = agentName.toLowerCase().replace('/', '').replace(' ', '');
   const ids = {
@@ -430,7 +430,7 @@ function mostrarAgentes(tipoComp) {
   
   title.textContent = `COMPOSIÇÃO ${tipoComp.toUpperCase()}`;
   
-  // Mostra loading
+
   container.innerHTML = `
     <div class="loading-container">
       <div class="loading-spinner"></div>
@@ -463,7 +463,7 @@ function fecharModalAgentes() {
   document.getElementById('agentsModal').style.display = 'none';
 }
 
-// Fechar modais clicando fora
+
 window.onclick = function(event) {
   const compsModal = document.getElementById('compsModal');
   const agentsModal = document.getElementById('agentsModal');
