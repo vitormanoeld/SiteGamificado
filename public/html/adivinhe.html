@@ -45,12 +45,12 @@
         <header class="header">
             <nav class="navbar">
                 <div class="navbar-div">
-                    <a class="active" href="/public/html/pagevalorant.html">Ínicio</a>
+                    <a href="/public/html/pagevalorant.html">Ínicio</a>
                     <a href="/public/html/agentes.html">Agentes</a>
                     <a href="/public/html/index.html">Mapas</a>
                     <a href="/public/html/armas.html">Armas</a>
                     <a href="/public/html/torneio.html">Torneios</a>
-                    <a href="/public/html/adivinhe.html">Adivinhe</a>
+                    <a class="active" href="/public/html/adivinhe.html">Adivinhe</a>
                 </div>
                 <button onclick="redirecionar()" class="valorant-play-btn pulse">
                     Jogar
@@ -60,7 +60,7 @@
     </section>
 
     <div class="container">
-       
+
         <div class="welcome-screen" id="welcomeScreen">
             <h1 class="welcome-title">Adivinhe o Elo</h1>
             <h2>3 Vidas apenas use com sabedoria...</h2><br><br>
@@ -80,7 +80,7 @@
             </button>
         </div>
 
-        
+
         <div class="game-screen" id="gameScreen">
             <div class="score-section">
                 <div class="score-container">
@@ -100,17 +100,17 @@
 
                 <div class="elos-section">
                     <div class="elos-container" id="elosContainer">
-                        
+
                     </div>
                 </div>
 
-                
+
                 <button style="margin-top: -30px;" class="minimal-btn btn-outline" id="nextBtn"
                     onclick="nextVideo()">PROXÍMO VÍDEO</button>
             </div>
         </div>
 
-        
+
         <div class="result-icon-overlay hidden" id="resultIconOverlay">
             <div class="result-icon" id="resultIcon"></div>
         </div>
