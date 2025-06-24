@@ -1,24 +1,34 @@
-
 const getAgentImage = (agentName) => {
-  const name = agentName.toLowerCase().replace('/', '').replace(' ', '');
+  const name = agentName.toLowerCase().replace("/", "").replace(" ", "");
   const ids = {
-    'jett': 'a3bfb853-43b2-7238-a4f1-ad90e9e46bcc',
-    'phoenix': 'eb93336a-449b-9c1b-0a54-a891f7921d69',
-    'breach': '5f8d3a7f-467b-97f3-062c-13acf203c006',
-    'skye': '6f2a04ca-43e0-be17-7f36-b3908627744d',
-    'omen': '8e253930-4c05-31dd-1b6c-968525494517',
-    'sova': '320b2a48-4d9b-a075-30f1-1f93a9b638fa',
-    'killjoy': '1e58de9c-4950-5125-93e9-a0aee9f98746',
-    'kayo': '601dbbe7-43ce-be57-2a40-4abd24953621',
-    'cypher': '117ed9e3-49f3-6512-3ccf-0cada7e3823b',
-    'sage': '569fdd95-4d10-43ab-ca70-79becc718b46',
-    'chamber': '22697a3d-45bf-8dd7-4fec-84a9e28c69d7',
-    'raze': 'f94c3b30-42be-e959-889c-5aa313dba261',
-    'brimstone': '9f0d8ba9-4140-b941-57d3-a7ad57c6b417',
-    'viper': '707eab51-4836-f488-046a-cda6bf494859'
+    jett: "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    phoenix: "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    breach: "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    skye: "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    omen: "8e253930-4c05-31dd-1b6c-968525494517",
+    sova: "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    killjoy: "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    kayo: "601dbbe7-43ce-be57-2a40-4abd24953621",
+    cypher: "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    sage: "569fdd95-4d10-43ab-ca70-79becc718b46",
+    chamber: "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    raze: "f94c3b30-42be-e959-889c-5aa313dba261",
+    brimstone: "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    viper: "707eab51-4836-f488-046a-cda6bf494859",
+    reyna: "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    yoru: "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    astra: "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    neon: "bb2a4828-46eb-8cd1-e765-15848195d751",
+    fade: "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    harbor: "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    gekko: "e370fa57-4757-3604-3648-499e1f642d3f",
+    deadlock: "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    iso: "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    clove: "1dbf2edd-7729-4428-b2c1-c47cd1bfc6d5",
+    vyse: "efba5359-3ec2-4de6-b6db-ef5c7fc3e229",
   };
-  
-  return ids[name] 
+
+  return ids[name]
     ? `https://media.valorant-api.com/agents/${ids[name]}/displayicon.png`
     : `https://via.placeholder.com/150?text=${agentName}`;
 };
@@ -26,72 +36,72 @@ const getAgentImage = (agentName) => {
 const composicoes = {
   ascent: {
     rush: [
+      { nome: "Neon" },
       { nome: "Jett" },
-      { nome: "Phoenix" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Omen" }
+      { nome: "Gekko" },
+      { nome: "Omen" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Killjoy" },
       { nome: "Omen" },
       { nome: "Jett" },
-      { nome: "KAY/O" }
+      { nome: "KAY/O" },
     ],
     safe: [
       { nome: "Killjoy" },
       { nome: "Cypher" },
       { nome: "Sage" },
       { nome: "Omen" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Chamber" },
+    ],
   },
   bind: {
     rush: [
       { nome: "Raze" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Phoenix" },
-      { nome: "Brimstone" }
+      { nome: "Gekko" },
+      { nome: "Neon" },
+      { nome: "Brimstone" },
     ],
     media: [
       { nome: "Raze" },
       { nome: "Breach" },
       { nome: "Brimstone" },
-      { nome: "Cypher" },
-      { nome: "Skye" }
+      { nome: "Fade" },
+      { nome: "Skye" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Sage" },
-      { nome: "Brimstone" },
+      { nome: "Viper" },
       { nome: "Chamber" },
-      { nome: "Killjoy" }
-    ]
+      { nome: "Deadlock" },
+    ],
   },
   haven: {
     rush: [
       { nome: "Jett" },
       { nome: "Phoenix" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Viper" }
+      { nome: "Gekko" },
+      { nome: "Viper" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Viper" },
       { nome: "Jett" },
-      { nome: "Breach" }
+      { nome: "Breach" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Viper" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Chamber" },
+    ],
   },
   split: {
     rush: [
@@ -99,184 +109,184 @@ const composicoes = {
       { nome: "Raze" },
       { nome: "Phoenix" },
       { nome: "Breach" },
-      { nome: "Omen" }
+      { nome: "Omen" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Sage" },
       { nome: "Jett" },
-      { nome: "Omen" }
+      { nome: "Omen" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Chamber" },
-      { nome: "Viper" }
-    ]
+      { nome: "Viper" },
+    ],
   },
   icebox: {
     rush: [
-      { nome: "Jett" },
+      { nome: "Neon" },
       { nome: "Phoenix" },
       { nome: "Breach" },
       { nome: "Raze" },
-      { nome: "Viper" }
+      { nome: "Viper" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Sage" },
       { nome: "Viper" },
       { nome: "Jett" },
-      { nome: "KAY/O" }
+      { nome: "KAY/O" },
     ],
     safe: [
       { nome: "Killjoy" },
       { nome: "Cypher" },
       { nome: "Sage" },
       { nome: "Viper" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Chamber" },
+    ],
   },
   breeze: {
     rush: [
       { nome: "Jett" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Viper" }
+      { nome: "Gekko" },
+      { nome: "Viper" },
     ],
     media: [
-      { nome: "Sova" },
-      { nome: "Cypher" },
+      { nome: "Fade" },
+      { nome: "Chamber" },
       { nome: "Viper" },
       { nome: "Jett" },
-      { nome: "Chamber" }
+      { nome: "KAY/O" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Viper" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Chamber" },
+    ],
   },
   fracture: {
     rush: [
       { nome: "Raze" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Brimstone" }
+      { nome: "Gekko" },
+      { nome: "Brimstone" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Brimstone" },
       { nome: "Raze" },
-      { nome: "KAY/O" }
+      { nome: "KAY/O" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Brimstone" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Deadlock" },
+    ],
   },
   pearl: {
     rush: [
       { nome: "Jett" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Omen" }
+      { nome: "Gekko" },
+      { nome: "Harbor" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
-      { nome: "Omen" },
+      { nome: "Harbor" },
       { nome: "Jett" },
-      { nome: "KAY/O" }
+      { nome: "KAY/O" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
-      { nome: "Omen" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Harbor" },
+      { nome: "Chamber" },
+    ],
   },
   lotus: {
     rush: [
       { nome: "Jett" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Skye" },
-      { nome: "Omen" }
+      { nome: "Gekko" },
+      { nome: "Omen" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Omen" },
       { nome: "Jett" },
-      { nome: "Breach" }
+      { nome: "Breach" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Omen" },
-      { nome: "Viper" }
-    ]
+      { nome: "Deadlock" },
+    ],
   },
   sunset: {
     rush: [
       { nome: "Jett" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Raze" },
-      { nome: "Omen" }
+      { nome: "Gekko" },
+      { nome: "Omen" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Omen" },
       { nome: "Jett" },
-      { nome: "KAY/O" }
+      { nome: "Harbor" },
     ],
     safe: [
       { nome: "Cypher" },
       { nome: "Killjoy" },
       { nome: "Sage" },
       { nome: "Omen" },
-      { nome: "Chamber" }
-    ]
+      { nome: "Chamber" },
+    ],
   },
   abyss: {
     rush: [
       { nome: "Jett" },
-      { nome: "Phoenix" },
+      { nome: "Neon" },
       { nome: "Breach" },
-      { nome: "Raze" },
-      { nome: "Omen" }
+      { nome: "Gekko" },
+      { nome: "Omen" },
     ],
     media: [
-      { nome: "Sova" },
+      { nome: "Fade" },
       { nome: "Cypher" },
       { nome: "Omen" },
       { nome: "Jett" },
-      { nome: "Breach" }
+      { nome: "Breach" },
     ],
     safe: [
       { nome: "Cypher" },
-      { nome: "Killjoy" },
+      { nome: "Vyse" },
       { nome: "Sage" },
       { nome: "Omen" },
-      { nome: "Viper" }
-    ]
-  }
+      { nome: "Chamber" },
+    ],
+  },
 };
 
 const mapas = {
@@ -359,7 +369,7 @@ const mapas = {
   },
 };
 
-let mapaAtual = 'ascent';
+let mapaAtual = "ascent";
 
 function obterElementosAudio() {
   return {
@@ -411,25 +421,24 @@ function configurarCartoesMapa() {
 }
 
 function abrirModalComps() {
-  const modal = document.getElementById('compsModal');
-  const mapName = document.getElementById('modalMapName');
+  const modal = document.getElementById("compsModal");
+  const mapName = document.getElementById("modalMapName");
   mapName.textContent = `COMPOSIÇÕES PARA ${mapas[mapaAtual].nome}`;
-  modal.style.display = 'block';
+  modal.style.display = "block";
 }
 
 function fecharModalComps() {
-  document.getElementById('compsModal').style.display = 'none';
+  document.getElementById("compsModal").style.display = "none";
 }
 
 function mostrarAgentes(tipoComp) {
   fecharModalComps();
-  
-  const modal = document.getElementById('agentsModal');
-  const title = document.getElementById('compTitle');
-  const container = document.getElementById('agentsContainer');
-  
+
+  const modal = document.getElementById("agentsModal");
+  const title = document.getElementById("compTitle");
+  const container = document.getElementById("agentsContainer");
+
   title.textContent = `COMPOSIÇÃO ${tipoComp.toUpperCase()}`;
-  
 
   container.innerHTML = `
     <div class="loading-container">
@@ -437,44 +446,44 @@ function mostrarAgentes(tipoComp) {
       <p>Carregando agentes...</p>
     </div>
   `;
-  
-  modal.style.display = 'block';
-  
-  
+
+  modal.style.display = "block";
+
   setTimeout(() => {
     const agentes = composicoes[mapaAtual][tipoComp];
-    container.innerHTML = '';
-    
-    agentes.forEach(agente => {
-      const agentCard = document.createElement('div');
-      agentCard.className = 'agent-card';
-      
+    container.innerHTML = "";
+
+    agentes.forEach((agente) => {
+      const agentCard = document.createElement("div");
+      agentCard.className = "agent-card";
+
       agentCard.innerHTML = `
-        <div class="agent-image" style="background-image: url('${getAgentImage(agente.nome)}')"></div>
+        <div class="agent-image" style="background-image: url('${getAgentImage(
+          agente.nome
+        )}')"></div>
         <div class="agent-name">${agente.nome}</div>
       `;
-      
+
       container.appendChild(agentCard);
     });
   }, 5000);
 }
 
 function fecharModalAgentes() {
-  document.getElementById('agentsModal').style.display = 'none';
+  document.getElementById("agentsModal").style.display = "none";
 }
 
+window.onclick = function (event) {
+  const compsModal = document.getElementById("compsModal");
+  const agentsModal = document.getElementById("agentsModal");
 
-window.onclick = function(event) {
-  const compsModal = document.getElementById('compsModal');
-  const agentsModal = document.getElementById('agentsModal');
-  
   if (event.target == compsModal) {
-    compsModal.style.display = 'none';
+    compsModal.style.display = "none";
   }
   if (event.target == agentsModal) {
-    agentsModal.style.display = 'none';
+    agentsModal.style.display = "none";
   }
-}
+};
 
 function inicializar() {
   configurarCartoesMapa();
