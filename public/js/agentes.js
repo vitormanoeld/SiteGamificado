@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (imgFundoAgente) {
         const nomeImagem = chaveAgente === "chyper" ? "cypher" : chaveAgente;
-        imgFundoAgente.src = `/assets/agentes/${nomeImagem}.avif`;
+        imgFundoAgente.src = `assets/agentes/${nomeImagem}.avif`;
         imgFundoAgente.alt = `${agentes[chaveAgente].nome} Fundo`;
       }
 

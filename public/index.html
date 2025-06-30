@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorant - Página Inicial</title>
+    <meta name="description" content="Página sobre Valorant com informações de agentes, mapas, armas e torneios." />
+    <link rel="stylesheet" href="stylesvalorant.css" />
+    <link rel="icon" type="image/png" href="assets/GERAL/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <section>
+        <div class="background-container">
+            <video autoplay muted loop playsinline preload="auto" id="valorantVideo" class="video-bg">
+                <source src="videos/valorant.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeo em HTML5.
+            </video>
+
+        </div>
+
+        <div class="divlogo">
+            <a class="logo" href="inicial.html">
+                <img class="imglogo" src="assets/GERAL/valorant.png" alt="Logo Valorant" />
+            </a>
+        </div>
+
+        <header class="header">
+            <nav class="navbar">
+                <div class="navbar-div">
+                    <a class="active" href="index.html">Ínicio</a>
+                    <a href="agentes.html">Agentes</a>
+                    <a href="pagevalorant.html">Mapas</a>
+                    <a href="armas.html">Armas</a>
+                    <a href="torneio.html">Torneios</a>
+                </div>
+                <button onclick="redirecionar()" class="valorant-play-btn pulse">
+                    Jogar
+                </button>
+            </nav>
+        </header>
+
+        <div class="namevava">
+            <h1>Valorant</h1>
+            <div>
+                <h2></h2>
+            </div>
+            <div class="buttons">
+                <button onclick="redirecionar()" class="minimal-btn btn-filled">
+                    <div class="scan-effect"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <span class="btn-text">AGENTES</span>
+                </button>
+
+                <button onclick="redirecionar_torneio()" class="minimal-btn btn-outline">
+                    <div class="scan-effect"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <div class="corner-dots"></div>
+                    <span class="btn-text">TORNEIO</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+    <script>
+        function redirecionar() {
+            window.location.href = "agentes.html";
+        }
+        function redirecionar_torneio() {
+            window.location.href = "torneio.html";
+        }
+    </script>
+</body>
+
+</html>

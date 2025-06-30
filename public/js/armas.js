@@ -12,10 +12,10 @@ const data = {
       range: 85,
     },
     images: [
-      "http://localhost:3000/imagens/primordium-skin.png",
-      "http://localhost:3000/imagens/vandal-singularity.png",
-      "http://localhost:3000/imagens/vandal-champ.png",
-      "http://localhost:3000/imagens/vandal-divergence.png",
+      "videos/imagens/primordium-skin.png",
+      "videos/imagens/vandal-singularity.png",
+      "videos/imagens/vandal-champ.png",
+      "videos/imagens/vandal-divergence.png",
     ],
   },
   PHANTOM: {
@@ -26,9 +26,9 @@ const data = {
       range: 70,
     },
     images: [
-      "http://localhost:3000/imagens/phantom-nocturnum.webp",
-      "http://localhost:3000/imagens/phantom-champions.webp",
-      "http://localhost:3000/imagens/skin-phantom-rosa.png",
+      "videos/imagens/phantom-nocturnum.webp",
+      "videos/imagens/phantom-champions.webp",
+      "videos/imagens/skin-phantom-rosa.png",
     ],
   },
   OPERATOR: {
@@ -39,18 +39,18 @@ const data = {
       range: 95,
     },
     images: [
-      "http://localhost:3000/imagens/Araxys_Operator.webp",
-      "http://localhost:3000/imagens/op-div.png",
-      "http://localhost:3000/imagens/Mystbloom_Operator.webp",
+      "videos/imagens/Araxys_Operator.webp",
+      "videos/imagens/op-div.png",
+      "videos/imagens/Mystbloom_Operator.webp",
     ],
   },
 };
 
 // Vídeos padrão para cada aba
 const defaultVideos = {
-  VANDAL: "http://localhost:3000/videos/video-primordium.mp4",
-  PHANTOM: "http://localhost:3000/videos/Phantom_nocturn.mp4",
-  OPERATOR: "http://localhost:3000/videos/op-araxys-vid.mp4",
+  VANDAL: "videos/video-primordium.mp4",
+  PHANTOM: "videos/Phantom_nocturn.mp4",
+  OPERATOR: "videos/op-araxys-vid.mp4",
 };
 
 function updateStats(weapon) {
@@ -155,20 +155,20 @@ function iniciarVideoDeFundo(arma, idx) {
   if (!video) return;
   const videos = {
     VANDAL: [
-      "http://localhost:3000/videos/video-primordium.mp4",
-      "http://localhost:3000/videos/video-singularity.mp4",
-      "http://localhost:3000/videos/video-champ.mp4",
-      "http://localhost:3000/videos/skin-divergence.mp4",
+      "videos/video-primordium.mp4",
+      "videos/video-singularity.mp4",
+      "videos/video-champ.mp4",
+      "videos/skin-divergence.mp4",
     ],
     PHANTOM: [
-      "http://localhost:3000/videos/Phantom_nocturn.mp4",
-      "http://localhost:3000/videos/panthom-camp24.mp4",
-      "http://localhost:3000/videos/phantom-rosa.mp4",
+      "videos/phantom_nocturn.mp4",
+      "videos/panthom-camp24.mp4",
+      "videos/phantom-rosa.mp4",
     ],
     OPERATOR: [
-      "http://localhost:3000/videos/op-araxys-vid.mp4",
-      "http://localhost:3000/videos/op-div-vid.mp4",
-      "http://localhost:3000/videos/op-myst-vid.mp4",
+      "videos/op-araxys-vid.mp4",
+      "videos/op-div-vid.mp4",
+      "videos/op-myst-vid.mp4",
     ],
   };
   video.src = videos[arma][idx];

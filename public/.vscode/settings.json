@@ -1,0 +1,10 @@
+{
+  "liveServer.settings.port": 5500,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "sqltools.connections": [],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  }
+  
+}

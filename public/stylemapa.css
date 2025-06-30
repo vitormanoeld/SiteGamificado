@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ========== VARIÁVEIS CSS ========== */
+
+:root {
+    --valorant-red: #ff4655;
+    --valorant-blue: #0f1923;
+    --valorant-light: #ece8e1;
+    --valorant-dark: #111;
+    --valorant-accent: #bd3944;
+    --valorant-gray: #768079;
+    --transition-speed: 0.3s;
+}
+
+
+/* ========== RESET E BASE ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--valorant-blue);
+    color: var(--valorant-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+header {
+    z-index: 10;
+}
+
+
+/* ========== LAYOUT PRINCIPAL ========== */
+
+.site-container {
+    width: 100%;
+    position: relative;
+}
+
+main {
+    position: relative;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    margin-top: -95px;
+    height:99vh;
+}
+
+
+/* ========== BACKGROUND DO MAPA ========== */
+
+.map-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(assets/ascent/ascentfundo.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.2;
+    transition: background-image 0.5s ease;
+    z-index: -1;
+}
+
+
+/* ========== CONTEÚDO DO MAPA ========== */
+
+.map-content {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 140px;
+    padding: 40px 0;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.map-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.map-title-container {
+    margin-bottom: 20px;
+}
+
+.map-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+.map-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: var(--valorant-red);
+}
+
+.map-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.callout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 70, 85, 0.2);
+    border: 1px solid var(--valorant-red);
+    color: var(--valorant-light);
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.callout-button:hover {
+    background-color: rgba(255, 70, 85, 0.4);
+}
+
+
+/* ========== LAYOUT DO MAPA ========== */
+
+.map-layout-container {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: flex;
+}
+
+.map-layout {
+    width: 100%;
+    height: 500px;
+    background-image: url('assets/ascent/miniacent.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+}
+
+
+/* ========== SELETOR DE MAPAS ========== */
+
+.maps-selector {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    z-index: 20;
+}
+
+.map-card {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: transform var(--transition-speed), border-color var(--transition-speed);
+    cursor: pointer;
+}
+
+.map-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--valorant-red);
+}
+
+.map-card.active {
+    border-color: var(--valorant-red);
+}
+
+.map-card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-speed);
+}
+
+.map-card:hover .map-card-image {
+    transform: scale(1.05);
+}
+
+.map-card-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+/* ========== IMAGENS DOS MAPAS ========== */
+
+.map-card[data-map="ascent"] .map-card-image {
+    background-image: url('assets/ascent/fundoAscent.jpg');
+    background-position: center bottom;
+}
+
+.map-card[data-map="bind"] .map-card-image {
+    background-image: url('assets/bind/fundobind.webp');
+}
+
+.map-card[data-map="haven"] .map-card-image {
+    background-image: url('assets/haven/FundoHaven.webp');
+}
+
+.map-card[data-map="split"] .map-card-image {
+    background-image: url('assets/split/fundoSplit.webp');
+}
+
+.map-card[data-map="icebox"] .map-card-image {
+    background-image: url('assets/icebox/fundoIcebox.jpg');
+    background-position: center bottom;
+}
+
+.map-card[data-map="breeze"] .map-card-image {
+    background-image: url('assets/breeze/layout-breeze.jpg');
+}
+
+.map-card[data-map="fracture"] .map-card-image {
+    background-image: url('assets/fracture/fundoFracture.webp');
+    background-position: center bottom;
+}
+
+.map-card[data-map="pearl"] .map-card-image {
+    background-image: url('assets/pearl/fundoPearl.webp');
+}
+
+.map-card[data-map="lotus"] .map-card-image {
+    background-image: url('assets/lotus/fundoLotus.webp');
+}
+
+.map-card[data-map="sunset"] .map-card-image {
+    background-image: url('assets/sunset/sunset.png');
+}
+.map-card[data-map="abyss"] .map-card-image {
+    background-image: url('assets/abyss/background-abyss.jpg');
+}
+
+
+/* ========== MEDIA QUERIES ========== */
+@media (min-width:1920px){
+    .maps-selector{
+        top: 70%;
+    }
+}
+@media (max-width: 1200px) {
+    .maps-selector {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .map-content {
+        grid-template-columns: 1fr;
+    }
+    .map-layout-container {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .maps-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .map-title {
+        font-size: 42px;
+    }
+    .maps-selector {
+        grid-template-columns: 1fr;
+    }
+}
