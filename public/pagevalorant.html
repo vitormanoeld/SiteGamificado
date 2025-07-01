@@ -143,7 +143,7 @@
             <a href="armas.html">Armas</a>
             <a href="torneio.html">Torneios</a>
         </div>
-        <button class="valorant-play-btn pulse">Jogar</button>
+        <button onclick="redirecionar()" class="valorant-play-btn pulse">Jogar</button>
     </nav>
 </header>
 
@@ -225,7 +225,7 @@
         </main>
     </div>
 
-    <!-- Modal para escolher tipo de comp -->
+   
     <div id="compsModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="fecharModalComps()">&times;</span>
@@ -238,13 +238,13 @@
         </div>
     </div>
 
-    <!-- Modal para mostrar agentes -->
+    
     <div id="agentsModal" class="modal agents-modal">
         <div class="modal-content">
             <span class="close" onclick="fecharModalAgentes()">&times;</span>
             <div class="comp-title" id="compTitle">COMPOSIÇÃO RUSH</div>
             <div class="agents-container" id="agentsContainer">
-                <!-- Agentes serão inseridos aqui -->
+
             </div>
         </div>
     </div>
