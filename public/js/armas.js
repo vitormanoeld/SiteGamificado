@@ -46,32 +46,29 @@ const data = {
   },
 };
 
-// Vídeos padrão para cada aba
+
 const defaultVideos = {
-  VANDAL: "videos/video-primordium.mp4",
-  PHANTOM: "videos/Phantom_nocturn.mp4",
-  OPERATOR: "videos/op-araxys-vid.mp4",
+  VANDAL: "videos/video-primordium.webm",
+  PHANTOM: "videos/Phantom_nocturn.webm",
+  OPERATOR: "videos/op-araxys-vid.webm",
 };
 
 function updateStats(weapon) {
   const stats = data[weapon].stats;
 
-  // Atualizar barra de damage
   const damageBar = document.querySelector(".state-valorant-damage .stat-bar");
   if (damageBar) {
     damageBar.style.width = stats.damage + "%";
   }
 
-  // Atualizar barra de fire rate
-  const fireRateBar = document.querySelector(
-    ".state-valorant-fire-rate .stat-bar"
-  );
+  const fireRateBar = document.querySelector(".state-valorant-fire-rate .stat-bar");
+
   if (fireRateBar) {
     fireRateBar.style.width = stats.fireRate + "%";
   }
 
-  // Atualizar barra de range
   const rangeBar = document.querySelector(".state-valorant-range .stat-bar");
+
   if (rangeBar) {
     rangeBar.style.width = stats.range + "%";
   }
@@ -155,20 +152,20 @@ function iniciarVideoDeFundo(arma, idx) {
   if (!video) return;
   const videos = {
     VANDAL: [
-      "videos/video-primordium.mp4",
-      "videos/video-singularity.mp4",
-      "videos/video-champ.mp4",
-      "videos/skin-divergence.mp4",
+      "videos/video-primordium.webm",
+      "videos/video-singularity.webm",
+      "videos/video-champ.webm",
+      "videos/skin-divergence.webm",
     ],
     PHANTOM: [
-      "videos/phantom_nocturn.mp4",
+      "videos/phantom_nocturn.webm",
       "videos/panthom-camp24.mp4",
-      "videos/phantom-rosa.mp4",
+      "videos/phantom-rosa.webm",
     ],
     OPERATOR: [
-      "videos/op-araxys-vid.mp4",
-      "videos/op-div-vid.mp4",
-      "videos/op-myst-vid.mp4",
+      "videos/op-araxys-vid.webm",
+      "videos/op-div-vid.webm",
+      "videos/op-myst-vid.webm",
     ],
   };
   video.src = videos[arma][idx];

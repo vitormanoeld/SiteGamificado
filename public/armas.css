@@ -6,6 +6,142 @@
   cursor: pointer;
 }
 
+video#meuVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.4;
+  display: block;
+}
+
+.botao-mude {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 0;
+  width: max-content;
+  height: max-content;
+  display: inline-block;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.botao-mude button {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  color: rgb(255, 255, 255);
+}
+
+.stats-container {
+  background: #1e232800;
+
+  border-radius: 4px;
+  padding: 30px 40px;
+  width: 400px;
+  margin-top: 24%;
+  margin-left: 60px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-label {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.stat-bar-container {
+  flex: 1;
+  height: 4px;
+  background: #2c3338;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stat-bar {
+  height: 100%;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: fillBar 1.5s ease-out;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0 !important;
+  }
+}
+
+.stat-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-row:hover .stat-bar::after {
+  opacity: 1;
+}
+
+.stat-row:hover .stat-label {
+  color: #ece8e1;
+}
+
+.state-valorant-damage .stat-bar {
+  background: linear-gradient(90deg, #ff4655 0%, #ff6b7a 100%);
+  width: 95%;
+  box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+}
+
+.state-valorant-fire-rate .stat-bar {
+  background: linear-gradient(90deg, #ff4655 0%, #ff6b7a 100%);
+  width: 75%;
+  box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+}
+
+.state-valorant-range .stat-bar {
+  background: linear-gradient(90deg, #ff4655 0%, #ff6b7a 100%);
+  width: 100%;
+  box-shadow: 0 0 8px rgba(255, 70, 85, 0.4);
+}
+
+.stat-row:hover .stat-bar {
+  transform: scaleY(1.5);
+  filter: brightness(1.2);
+}
+
+.stat-bar-container:hover {
+  background: #3a4249;
+}
 .info {
   position: absolute;
   left: 100px;
@@ -19,7 +155,7 @@
   font-size: 5em;
   color: #ff4655;
   margin-bottom: 10px;
-   font-family: 'Valorant', sans-serif;
+  font-family: "Valorant", sans-serif;
   letter-spacing: 8px;
 }
 

@@ -23,7 +23,7 @@
 
         <div class="divlogo">
             <a class="logo" href="inicial.html">
-                <img class="imglogo" src="assets/GERAL/valorant.png" alt="Logo Valorant" />
+                <img class="imglogo" loading="eager" src="assets/GERAL/valorant.png" alt="Logo Valorant" />
             </a>
         </div>
 
@@ -48,7 +48,7 @@
                 <h2></h2>
             </div>
             <div class="buttons">
-                <button onclick="redirecionar()" class="minimal-btn btn-filled">
+                <button onclick="redirecionar_agentes()" class="minimal-btn btn-filled">
                     <div class="scan-effect"></div>
                     <div class="corner-dots"></div>
                     <div class="corner-dots"></div>
@@ -70,7 +70,7 @@
     </section>
     <script src="js/script.js"></script>
     <script>
-        function redirecionar() {
+        function redirecionar_agentes() {
             window.location.href = "agentes.html";
         }
         function redirecionar_torneio() {
